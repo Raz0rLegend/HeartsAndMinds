@@ -39,6 +39,11 @@ params [
 }] call CBA_fnc_addEventHandler;
 _player addEventHandler ["CuratorObjectPlaced", btc_eh_fnc_CuratorObjectPlaced];
 ["ace_treatmentSucceded", btc_rep_fnc_treatment] call CBA_fnc_addEventHandler;
+if !(isServer) then { // Don't add twice the event in player host
+    ["ace_repair_setWheelHitPointDamage", {
+        _this remoteExecCall ["btc_rep_fnc_wheelChange", 2];
+    }] call CBA_fnc_addEventHandler;
+};
 _player addEventHandler ["WeaponAssembled", btc_civ_fnc_add_leaflets];
 [_player, "WeaponAssembled", {[_thisType, _this] call btc_fob_fnc_rallypointAssemble;}] call CBA_fnc_addBISEventHandler;
 [_player, "WeaponDisassembled", {[_thisType, _this] call btc_fob_fnc_rallypointAssemble;}] call CBA_fnc_addBISEventHandler;
@@ -64,8 +69,8 @@ if (btc_p_chem) then {
     [missionNamespace, "probingEnded", btc_chem_fnc_biopsy] call BIS_fnc_addScriptedEventHandler;
 
     // Disable BI shower
-    ["DeconShower_01_F", "init", {(_this select 0) setVariable ['bin_deconshower_disableAction', true];}] call CBA_fnc_addClassEventHandler;
-    ["DeconShower_02_F", "init", {(_this select 0) setVariable ['bin_deconshower_disableAction', true];}] call CBA_fnc_addClassEventHandler;
+    ["DeconShower_01_F", "init", {(_this select 0) setVariable ['bin_deconshower_disableAction', true];}, true, [], true] call CBA_fnc_addClassEventHandler;
+    ["DeconShower_02_F", "init", {(_this select 0) setVariable ['bin_deconshower_disableAction', true];}, true, [], true] call CBA_fnc_addClassEventHandler;
 
     [] call btc_chem_fnc_ehDetector;
 };
