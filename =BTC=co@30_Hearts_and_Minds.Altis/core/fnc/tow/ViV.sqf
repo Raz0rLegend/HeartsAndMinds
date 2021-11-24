@@ -3,7 +3,7 @@
 Function: btc_fnc_tow_ViV
 
 Description:
-    Move selected vehicle in the tower cargo with an hiden vehicle.
+    Move selected vehicle in the tower cargo with a hidden vehicle.
 
 Parameters:
     _vehicleSelected - Vehicle to store in the tower cargo. [Object]
@@ -43,9 +43,8 @@ private _attachTo = [
 _vehicleSelected attachTo [_hideVehicle, _attachTo];
 
 if (_tower setVehicleCargo _hideVehicle) then {
-     [_tower, "CargoUnloaded", {
-        params ["_tower", "_hideVehicle"];
-        private _vehicleSelected = _thisArgs select 0;
+    [{isNull isVehicleCargo (_this select 0)}, {
+        params ["_hideVehicle", "_vehicleSelected"];
 
         private _pos = getPosWorld _vehicleSelected;
         _pos set [2, (_pos select 2) + 0.3];
@@ -55,7 +54,7 @@ if (_tower setVehicleCargo _hideVehicle) then {
 
         _vehicleSelected setPosWorld _pos;
         [_vehicleSelected, [0, 0, 0.01]] remoteExecCall ["setVelocity", _vehicleSelected]; // Activate physic
-    }, [_vehicleSelected]] call CBA_fnc_addBISEventHandler;
+    }, [_hideVehicle, _vehicleSelected]] call CBA_fnc_waitUntilAndExecute;
     true
 } else {
     deleteVehicle _hideVehicle;

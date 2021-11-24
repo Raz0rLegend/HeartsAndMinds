@@ -59,8 +59,6 @@ private _has_ho = _city getVariable ["has_ho", false];
 private _ieds = _city getVariable ["ieds", []];
 private _spawningRadius = _radius/2;
 
-private _buildings = nearestObjects [_city, ["Building"], _radius]; 
-																
 if (!(_city getVariable ["initialized", false])) then {
     private _ratio = (switch _type do {
         case "Hill" : {random 1};
@@ -124,10 +122,6 @@ if !(_data_units isEqualTo []) then {
         for "_i" from 1 to (round (_p_mil_group_ratio * (1 + random _max_number_group))) do {
             [_city, _spawningRadius, 1 + round random [0, 1, 2], random 1] call btc_fnc_mil_create_group;
         };
-private _closest = [_city, btc_city_all select {!(_x getVariable ["active", false])}, false] call btc_fnc_find_closecity;
-        for "_i" from 1 to (1 + round random 2) do {
-            [[_closest, [_city, _spawningRadius/3] call CBA_fnc_randPos, 1, selectRandom btc_type_motorized_armed], btc_fnc_mil_send] call btc_fnc_delay_exec;
-        };
     };
 
     if !(_type in ["Hill", "NameMarine"]) then {
@@ -163,17 +157,6 @@ private _closest = [_city, btc_city_all select {!(_x getVariable ["active", fals
         [+_houses, round (_p_civ_group_ratio * _max_number_group), _city] call btc_fnc_civ_populate;
     };
 };
-
-//Civilian Weapons Call
-//[getPos _city, 300] call btc_fnc_civ_get_weapons;
-//[[getPos _city, 300], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
-if (btc_global_reputation < 300) then {
-    private _rand = random 8;
-    if(_rand > 7) then {playSound3d [getMissionPath "core\sounds\IslamicCTP_1.ogg", _buildings select 0, false, getPosASL (_buildings select 0), 5, 1, 600];
-    [_city, _spawningRadius, 1 + round random [0, 1, 2], random 1] call btc_fnc_mil_create_group;
-    [[getPos _city, 300], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
-    }};
-
 if (btc_p_animals_group_ratio > 0) then {
     if !(_data_animals isEqualTo []) then {
         {
