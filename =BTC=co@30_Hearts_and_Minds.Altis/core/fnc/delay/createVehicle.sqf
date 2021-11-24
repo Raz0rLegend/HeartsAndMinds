@@ -31,8 +31,6 @@ Author:
 btc_delay_createUnit = btc_delay_createUnit + 0.3;
 
 [{
-    btc_delay_createUnit = btc_delay_createUnit - 0.3;
-
     params [
         ["_group", grpNull, [grpNull]],
         ["_vehicle_type", "", [""]],
@@ -85,6 +83,7 @@ btc_delay_createUnit = btc_delay_createUnit + 0.3;
     };
 
     ["btc_delay_vehicleInit", [_veh, _group]] call CBA_fnc_localEvent;
+    btc_delay_createUnit = btc_delay_createUnit - 0.3;
 }, _this, btc_delay_createUnit - 0.01] call CBA_fnc_waitAndExecute;
 
 count (_this select 2) * 0.3

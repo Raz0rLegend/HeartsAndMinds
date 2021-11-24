@@ -46,7 +46,7 @@ Author:
             btc_chem_contaminated pushBack _l;
             publicVariable "btc_chem_contaminated";
         };
-        if (unitIsUAV _l) then {
+		 if (unitIsUAV _l) then {
             createVehicleCrew _l;
         };
     } forEach _cargo;

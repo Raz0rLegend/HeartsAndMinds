@@ -63,6 +63,7 @@ _helper attachTo [_tower, _selected_front_relativeToTower];
 private _rope1 = ropeCreate [_tower, _model_rear_tower, _helper, [-0.4, 0, 0]];
 private _rope2 = ropeCreate [_tower, _model_rear_tower, _helper, [0.4, 0, 0]];
 
+
 [_tower, "RopeBreak", {
     [_this, _thisArgs] call btc_fnc_tow_ropeBreak;
     deleteVehicle (_thisArgs select 2)
