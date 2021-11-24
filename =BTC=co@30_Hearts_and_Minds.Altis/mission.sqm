@@ -98609,7 +98609,11 @@ class Mission
 					flags=6;
 					class Attributes
 					{
-						aiRadarUsage=2;
+						init="if (isServer) then { this addEventHandler [ " \n "  ""Fired"", " \n "  { " \n "   params [""_unit""]; " \n "    if (someAmmo _unit) exitWith {}; " \n " " \n "    [ " \n "      { " \n "        params [""_unit""]; " \n "        _unit setVehicleAmmo 1; " \n "      },      [_unit],      10" \n "    ] call CBA_fnc_waitAndExecute; " \n " } " \n "];};";
+						name="oui";
+						reportRemoteTargets=1;
+						receiveRemoteTargets=1;
+						reportOwnPosition=1;
 					};
 					id=747;
 					type="B_SAM_System_03_F";
@@ -98646,7 +98650,11 @@ class Mission
 					flags=6;
 					class Attributes
 					{
-						aiRadarUsage=2;
+						init="if (isServer) then { this addEventHandler [ " \n "  ""Fired"", " \n "  { " \n "   params [""_unit""]; " \n "    if (someAmmo _unit) exitWith {}; " \n " " \n "    [ " \n "      { " \n "        params [""_unit""]; " \n "        _unit setVehicleAmmo 1; " \n "      },      [_unit],      10" \n "    ] call CBA_fnc_waitAndExecute; " \n " } " \n "];};";
+						name="oui1";
+						reportRemoteTargets=1;
+						receiveRemoteTargets=1;
+						reportOwnPosition=1;
 					};
 					id=750;
 					type="B_SAM_System_03_F";
