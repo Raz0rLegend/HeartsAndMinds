@@ -673,8 +673,8 @@ switch (_p_en) do {
         btc_type_units = btc_type_units - ["I_C_Soldier_Camo_F"];
     };
 	case "UK3CB_TKM_O" : {
-        btc_type_motorized = btc_type_motorized - ["UK3CB_TKA_O_L39_PYLON","UK3CB_TKA_O_Antonov_AN2","UK3CB_TKA_O_C130J","UK3CB_TKA_O_C130J_CARGO","UK3CB_TKA_O_MIG29S","UK3CB_TKA_O_Su25SM_CAS","UK3CB_TKA_O_Su25SM_Cluster","UK3CB_TKA_O_Su25SM_KH29"];
-        btc_type_motorized_armed = btc_type_motorized_armed - ["UK3CB_TKA_O_Antonov_AN2_Armed_Rockets","UK3CB_TKA_O_Cessna_T41_Armed","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_CAS1","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B"];
+        btc_type_motorized = btc_type_motorized + ["UK3CB_TKA_O_L39_PYLON","UK3CB_TKA_O_Antonov_AN2","UK3CB_TKA_O_C130J","UK3CB_TKA_O_C130J_CARGO","UK3CB_TKA_O_MIG29S","UK3CB_TKA_O_Su25SM_CAS","UK3CB_TKA_O_Su25SM_Cluster","UK3CB_TKA_O_Su25SM_KH29"];
+        btc_type_motorized_armed = btc_type_motorized_armed + ["UK3CB_TKA_O_Antonov_AN2_Armed_Rockets","UK3CB_TKA_O_Cessna_T41_Armed","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_CAS1","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B","UK3CB_TKA_O_T72B"];
     }
 };
 
