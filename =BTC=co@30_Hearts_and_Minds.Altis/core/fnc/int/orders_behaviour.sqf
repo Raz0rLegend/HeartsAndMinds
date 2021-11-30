@@ -64,7 +64,11 @@ switch (_order) do {
 if (_order isEqualTo 4) then {
     waitUntil {sleep 3; (isNull _unit || !alive _unit || (_unit inArea [_wp_pos, 10, 10, 0, false]))};
 } else {
-    waitUntil {sleep 3; (isNull _unit || !alive _unit || (count (getPos _unit nearEntities [btc_player_type, 50]) isEqualTo 0))};
+    waitUntil {sleep 3; (
+        isNull _unit ||
+        {!alive _unit} ||
+        {allPlayers inAreaArray [getPosWorld _unit, 50, 50] isEqualTo []}
+    )};
 };
 
 if (isNull _unit || !alive _unit) exitWith {};
@@ -78,6 +82,7 @@ if (_order isEqualTo 4) then {
 _unit setVariable ["order", nil];
 _unit setUnitPos "AUTO";
 _unit enableAI "PATH";
+_unit doMove getPos _unit;
 
 if (_unit isEqualTo vehicle _unit) then {
     [_group] call btc_civ_fnc_addWP;
