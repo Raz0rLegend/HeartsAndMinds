@@ -90,7 +90,7 @@ _action = ["Search_intel", localize "STR_A3_Showcase_Marksman_BIS_tskIntel_title
         }, {true}, {}, [_helipad], [0, 0, 0], 5] call ace_interact_menu_fnc_createAction;
         [_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     };
-} forEach [[btc_create_object, btc_create_object_point], [btc_create_object_1, btc_create_object_point_1], [btc_create_object_2, btc_create_object_point_2], [btc_create_object_3, btc_create_object_point_3]];
+} forEach [[btc_create_object, btc_create_object_point]];
 
 //Logistic
 _action = ["Logistic", localize "STR_BTC_HAM_ACTION_LOC_MAIN", "\A3\ui_f\data\igui\cfg\simpleTasks\letters\L_ca.paa", {}, {true}] call ace_interact_menu_fnc_createAction;
@@ -180,9 +180,6 @@ _actions pushBack ["FOB", localize "STR_BTC_HAM_ACTION_REDEPLOYFOB", "\A3\Ui_f\d
 {
     private _action = _x call ace_interact_menu_fnc_createAction;
     [btc_gear_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-    [btc_gear_object_1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-	[btc_gear_object_2, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-	[btc_gear_object_3, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     if (btc_p_respawn_fromFOBToBase) then {
         [btc_fob_flag, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
     };
@@ -192,9 +189,6 @@ _actions pushBack ["FOB", localize "STR_BTC_HAM_ACTION_REDEPLOYFOB", "\A3\Ui_f\d
 
     _action = ["FOB" + _cardinal, localize _cardinal, "\A3\ui_f\data\igui\cfg\simpleTasks\types\map_ca.paa", {}, {true}, btc_fob_fnc_redeploy, _degrees] call ace_interact_menu_fnc_createAction;
     [btc_gear_object, 0, ["ACE_MainActions", "FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
-    [btc_gear_object_1, 0, ["ACE_MainActions", "FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
-	[btc_gear_object_2, 0, ["ACE_MainActions", "FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
-	[btc_gear_object_3, 0, ["ACE_MainActions", "FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
     if (btc_p_respawn_fromFOBToBase) then {
         [btc_fob_flag, 0, ["ACE_MainActions", "FOB"], _action] call ace_interact_menu_fnc_addActionToClass;
     };
@@ -204,29 +198,16 @@ _actions pushBack ["FOB", localize "STR_BTC_HAM_ACTION_REDEPLOYFOB", "\A3\Ui_f\d
 //BIS
 if (btc_p_arsenal_Type < 3) then {
     btc_gear_object addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_BIS", "['Open', [btc_p_arsenal_Restrict isNotEqualTo 1, _this select 0]] call bis_fnc_arsenal;"];
-    btc_gear_object_1 addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_BIS", "['Open', [!(btc_p_arsenal_Restrict isEqualTo 1), _this select 0]] call bis_fnc_arsenal;"];
-	btc_gear_object_2 addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_BIS", "['Open', [!(btc_p_arsenal_Restrict isEqualTo 1), _this select 0]] call bis_fnc_arsenal;"];
-	btc_gear_object_3 addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_BIS", "['Open', [!(btc_p_arsenal_Restrict isEqualTo 1), _this select 0]] call bis_fnc_arsenal;"];					 
 };
 //ACE
 if (btc_p_arsenal_Type > 0) then {
     [btc_gear_object, btc_p_arsenal_Restrict isNotEqualTo 1, false] call ace_arsenal_fnc_initBox;
-    [btc_gear_object_1, !(btc_p_arsenal_Restrict isEqualTo 1), false] call ace_arsenal_fnc_initBox;
-	[btc_gear_object_2, !(btc_p_arsenal_Restrict isEqualTo 1), false] call ace_arsenal_fnc_initBox;
-	[btc_gear_object_3, !(btc_p_arsenal_Restrict isEqualTo 1), false] call ace_arsenal_fnc_initBox;											
     if (btc_p_arsenal_Type in [2, 4]) then {
         btc_gear_object addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_ACE", "[btc_gear_object, player] call ace_arsenal_fnc_openBox;"];
-        btc_gear_object_1 addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_ACE", "[btc_gear_object, player] call ace_arsenal_fnc_openBox;"];
-		btc_gear_object_2 addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_ACE", "[btc_gear_object, player] call ace_arsenal_fnc_openBox;"];
-		btc_gear_object_3 addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_ACE", "[btc_gear_object, player] call ace_arsenal_fnc_openBox;"];								  
     };
 };
-if (btc_p_arsenal_Restrict isNotEqualTo 0) then {
-	[btc_gear_object, btc_p_arsenal_Type, btc_p_arsenal_Restrict, btc_custom_arsenal] call btc_arsenal_fnc_data;
-    [btc_gear_object_1, btc_p_arsenal_Type, btc_p_arsenal_Restrict, btc_custom_arsenal] call btc_fnc_arsenal_data;
-	[btc_gear_object_2, btc_p_arsenal_Type, btc_p_arsenal_Restrict, btc_custom_arsenal] call btc_fnc_arsenal_data;
-	[btc_gear_object_3, btc_p_arsenal_Type, btc_p_arsenal_Restrict, btc_custom_arsenal] call btc_fnc_arsenal_data;
-	};
+if (btc_p_arsenal_Restrict isNotEqualTo 0) then {[btc_gear_object, btc_p_arsenal_Type, btc_p_arsenal_Restrict, btc_custom_arsenal] call btc_arsenal_fnc_data;};
+
 //Door
 _action = ["door_break", localize "STR_BTC_HAM_ACTION_DOOR_BREAK", "\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa", {
     [btc_door_fnc_break] call CBA_fnc_execNextFrame;
@@ -242,26 +223,3 @@ if (btc_p_flag > 1) then {
     }, {getForcedFlagTexture _target isNotEqualTo ""}] call ace_interact_menu_fnc_createAction;
     [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
 };
-
-//Jour/Nuit
-_action = ["Temps", "Mettre le jour", "\A3\ui_f\data\igui\cfg\simpleTasks\types\default_ca.paa", {((6 - daytime + 24) % 24) remoteExec ["skipTime",0]},{true}] call ace_interact_menu_fnc_createAction;
-["Land_PCSet_Intel_01_F", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-_action = ["Temps", "Mettre la nuit", "\A3\ui_f\data\igui\cfg\simpleTasks\types\default_ca.paa", {((22 - daytime + 24) % 24) remoteExec ["skipTime"],0},{true}] call ace_interact_menu_fnc_createAction;
-["Land_PCSet_Intel_01_F", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-
-//Teleportation PA
-_action = ["Teleport_Pa","Teleporter vers PA","",{_player setPosATL (getPosATL tppa);},{true}] call ace_interact_menu_fnc_createAction;   
-[tpbfr,0,["ACE_MainActions"],_action, true] call ace_interact_menu_fnc_addActionToObject; 
-[tpbus,0,["ACE_MainActions"],_action, true] call ace_interact_menu_fnc_addActionToObject;
-
-_action1 = ["Teleport_Ba_US","Teleporter vers Base US","",{_player setPosATL (getPosATL tpbus);},{count (allPlayers inAreaArray [getPos tpbfr,100,100]) == 1;}] call ace_interact_menu_fnc_createAction;  
-[tpbfr,0,["ACE_MainActions"],_action1, true] call ace_interact_menu_fnc_addActionToObject; 
-
-_action2 = ["Teleport_Ba_FR","Teleporter vers Base FR","",{_player setPosATL (getPosATL tpbfr);},{count (allPlayers inAreaArray [getPos tpbus,100,100]) == 1;}] call ace_interact_menu_fnc_createAction;
-[tpbus,0,["ACE_MainActions"],_action2, true] call ace_interact_menu_fnc_addActionToObject; 
-
-_action3 = ["Retour_Ba_FR","Teleporter vers Base FR","",{_player setPosATL (getPosATL tpbfr);},{true}] call ace_interact_menu_fnc_createAction;
-[tppa,0,["ACE_MainActions"],_action3, true] call ace_interact_menu_fnc_addActionToObject; 
-
-_action4 = ["Retour_Ba_US","Teleporter vers Base US","",{_player setPosATL (getPosATL tpbus);},{true}] call ace_interact_menu_fnc_createAction;
-[tppa,0,["ACE_MainActions"],_action4, true] call ace_interact_menu_fnc_addActionToObject;

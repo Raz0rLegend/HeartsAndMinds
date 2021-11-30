@@ -111,30 +111,9 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
     params ["_obj"];
     [_obj, -1] call ace_cargo_fnc_setSpace;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
-
-["Land_Cargo20_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,50] call ace_cargo_fnc_setSpace;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
-
-["Land_Cargo20_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,10] call ace_cargo_fnc_setSize;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
-
-["Land_Cargo40_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,100] call ace_cargo_fnc_setSpace;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
-
-["Land_Cargo40_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,25] call ace_cargo_fnc_setSize;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
-
 {
     [_x, "InitPost", {
         params ["_obj"];
         [_obj, 50] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["CUP_MTVR_Base", "Truck_01_base_F","rhsusf_M977A4_BKIT_usarmy_d","rhsusf_M977A4_usarmy_d"];
+} forEach ["CUP_MTVR_Base", "Truck_01_base_F"];

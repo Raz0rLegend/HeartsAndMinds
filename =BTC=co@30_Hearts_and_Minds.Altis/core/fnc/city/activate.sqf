@@ -55,7 +55,6 @@ private _has_en = _city getVariable ["occupied", false];
 private _has_ho = _city getVariable ["has_ho", false];
 private _ieds = _city getVariable ["ieds", []];
 private _spawningRadius = _cachingRadius/2;
-private _buildings = nearestObjects [_city, ["Building"], _cachingRadius]; 
 
 if (!(_city getVariable ["initialized", false])) then {
     private _ratio = (switch _type do {
@@ -162,18 +161,6 @@ if (_data_units isNotEqualTo []) then {
         [+_houses, round (_p_civ_group_ratio * _numberOfCivi), _city] call btc_civ_fnc_populate;
     };
 };
-
-//Civilian Weapons Call
-//[getPos _city, 300] call btc_fnc_civ_get_weapons;
-//[[getPos _city, 300], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
-if (btc_global_reputation < 300) then {
-    private _rand = random 8;
-    if(_rand > 7) then {playSound3d [getMissionPath "core\sounds\IslamicCTP_1.ogg", _buildings select 0, false, getPosASL (_buildings select 0), 5, 1, 600];
-    [_city, _spawningRadius, 1 + round random [0, 1, 2], random 1] call btc_fnc_mil_create_group;
-    [[getPos _city, 300], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
-    }};
-
-
 if (btc_p_animals_group_ratio > 0) then {
     if (_data_animals isNotEqualTo []) then {
         {
@@ -245,7 +232,7 @@ if (_has_ho && {!(_city getVariable ["ho_units_spawned", false])}) then {
     [_city, 120, 1 + round random 2, "SENTRY"] call btc_mil_fnc_create_group;
     [_city, 120, 1 + round random 2, "SENTRY"] call btc_mil_fnc_create_group;
     private _random = random 1;
-	private _pos = getPos _city;							
+    private _pos = getPos _city;
     switch (true) do {
         case (_random <= 0.3) : {};
         case (_random > 0.3 && _random <= 0.75) : {
@@ -340,9 +327,14 @@ if (_civKilled isNotEqualTo []) then {
 btc_patrol_active = btc_patrol_active - [grpNull];
 private _numberOfPatrol = count btc_patrol_active;
 if (_numberOfPatrol < _p_patrol_max) then {
-    private _min = [0, 1] select _has_en;
-    private _addMilPatrol = (_min + random 1) min (_p_patrol_max - _numberOfPatrol);
-    for "_i" from 1 to round _addMilPatrol do {
+    private _offset = 0;
+    private _max = 2;
+    if (_has_en) then {
+        _max = 3;
+        _offset = 3/2;
+    };
+    private _r = (_offset + random _max) min (_p_patrol_max - _numberOfPatrol);
+    for "_i" from 1 to round _r do {
         private _group = createGroup btc_enemy_side;
         btc_patrol_active pushBack _group;
         _group setVariable ["no_cache", true];
@@ -353,8 +345,8 @@ if (_numberOfPatrol < _p_patrol_max) then {
 btc_civ_veh_active = btc_civ_veh_active - [grpNull];
 private _numberOfCivVeh = count btc_civ_veh_active;
 if (_numberOfCivVeh < _p_civ_max_veh) then {
-    private _addCivVeh = (random 2) min (_p_civ_max_veh - _numberOfCivVeh);
-    for "_i" from 1 to round _addCivVeh do {
+    private _r = (3/2 + random 3) min (_p_civ_max_veh - _numberOfCivVeh);
+    for "_i" from 1 to round _r do {
         private _group = createGroup civilian;
         btc_civ_veh_active pushBack _group;
         _group setVariable ["no_cache", true];
