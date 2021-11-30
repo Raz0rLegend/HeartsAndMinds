@@ -87,7 +87,7 @@ class CfgUnitInsignia
 #include "core\fnc\task\taskTypes.hpp"
 
 class CfgFunctions {
-    #include "core\fnc\eh\functions.hpp"
+
     // add your own functions below
 class SA
 	{
