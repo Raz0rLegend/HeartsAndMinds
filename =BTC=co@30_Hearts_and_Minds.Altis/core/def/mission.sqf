@@ -99,7 +99,6 @@ btc_p_city_free_trigger_condition = if (_p_city_free_trigger isEqualTo 0) then {
     format ["[thisList, %1] call btc_city_fnc_trigger_free_condition", _p_city_free_trigger]
 };
 btc_p_flag = "btc_p_flag" call BIS_fnc_getParamValue;
-btc_p_auto_headless = ("btc_p_auto_headless" call BIS_fnc_getParamValue) isEqualTo 1;
 btc_p_debug = "btc_p_debug" call BIS_fnc_getParamValue;
 
 switch (btc_p_debug) do {
@@ -474,12 +473,7 @@ btc_construction_array =
             "Land_Mil_WallBig_4m_F",
             "Land_Mil_WallBig_Corner_F",
             "Land_PortableLight_double_F",
-            "Land_Pod_Heli_Transport_04_medevac_black_F",
-			"B_Slingload_01_Fuel_F",							
-			"Land_HBarrierTower_F",
-            "Land_HBarrierWall_corner_F",
-            "Land_HBarrierWall6_F",																			
-			"RHS_Stinger_AA_pod_USMC_D"						   
+            "Land_Pod_Heli_Transport_04_medevac_black_F"
         ],
         [
             //"Static"
@@ -522,8 +516,7 @@ btc_construction_array =
             "ACE_Wheel",
             "ACE_Track",
             "B_Slingload_01_Ammo_F",
-            "B_Slingload_01_Fuel_F",
-			"Land_CanisterFuel_F"
+            "B_Slingload_01_Fuel_F"
         ] + (_allClassSorted select {_x isKindOf "FlexibleTank_base_F"})
     ]
 ];
@@ -549,8 +542,8 @@ btc_log_fnc_get_nottowable = {
     switch (true) do {
         //The tower is a tank so it can't tow: plane and helicopter
         case (_tower isKindOf "Tank") : {["Plane", "Helicopter"];};
-        case (_tower isKindOf "Truck_F") : {[];};
-        case (_tower isKindOf "Truck") : {[];};
+        case (_tower isKindOf "Truck_F") : {["Plane", "Helicopter"];};
+        case (_tower isKindOf "Truck") : {["Plane", "Helicopter"];};
         case (_tower isKindOf "Ship") : {[];};
         //The tower is a car so it can't tow: truck, tank, plane and helicopter
         case (_tower isKindOf "Car") : {["Truck", "Truck_F", "Tank", "Plane", "Helicopter"];};
@@ -638,10 +631,6 @@ switch (_p_en) do {
         btc_type_motorized_armed = btc_type_motorized_armed + ["I_Heli_light_03_F", "I_G_Offroad_01_F"];
         btc_type_units = btc_type_units - ["I_C_Soldier_Camo_F"];
     };
-	case "UK3CB_TKM_O" : {
-        btc_type_motorized = btc_type_motorized + ["UK3CB_TKA_O_L39_PYLON","UK3CB_TKA_O_Antonov_AN2","UK3CB_TKA_O_C130J","UK3CB_TKA_O_C130J_CARGO","UK3CB_TKA_O_MIG29S","UK3CB_TKA_O_Su25SM_CAS","UK3CB_TKA_O_Su25SM_Cluster","UK3CB_TKA_O_Su25SM_KH29"];
-        btc_type_motorized_armed = btc_type_motorized_armed + ["UK3CB_TKA_O_Antonov_AN2_Armed_Rockets","UK3CB_TKA_O_Cessna_T41_Armed","UK3CB_MDF_O_Mystere_AA1","UK3CB_MDF_O_Mystere_CAS1","UK3CB_TKA_O_T72B"];
-    } 
 };
 
 //Chem
@@ -658,21 +647,21 @@ btc_rep_bonus_disarm = 15;
 btc_rep_bonus_hideout = 200;
 btc_rep_bonus_mil_killed = 0.25;
 btc_rep_bonus_IEDCleanUp = 10;
-btc_rep_bonus_removeTag = 3;
+btc_rep_bonus_removeTag = 0.25;
 btc_rep_bonus_removeTagLetter = 0.5;
 btc_rep_bonus_foodGive = 0.5;
 
 btc_rep_malus_civ_hd = - 2;
 btc_rep_malus_animal_hd = - 1;
-btc_rep_malus_civ_killed = - 40;
-btc_rep_malus_animal_killed = - 2;
-btc_rep_malus_civ_suppressed = - 5;
-btc_rep_malus_player_respawn = - 15;
+btc_rep_malus_civ_killed = - 10;
+btc_rep_malus_animal_killed = - 5;
+btc_rep_malus_civ_suppressed = - 4;
+btc_rep_malus_player_respawn = - 10;
 btc_rep_malus_veh_killed = - 25;
-btc_rep_malus_building_damaged = - 5;
-btc_rep_malus_building_destroyed = - 10;
+btc_rep_malus_building_damaged = - 2.5;
+btc_rep_malus_building_destroyed = - 5;
 btc_rep_malus_foodRemove = - btc_rep_bonus_foodGive;
-btc_rep_malus_breakDoor = - 5;
+btc_rep_malus_breakDoor = - 2;
 btc_rep_malus_wheelChange = - 7;
 
 //Skill
@@ -684,19 +673,19 @@ btc_units_owners = [];
 btc_player_type = ["SoldierWB", "SoldierEB", "SoldierGB"] select ([west, east, independent] find btc_player_side);
 
 //Door
-btc_door_breaking_time = 35;
+btc_door_breaking_time = 60;
 
 //Flag
 btc_flag_textures = [
     "\A3\Data_F\Flags\flag_red_CO.paa",
     "\A3\Data_F\Flags\flag_green_CO.paa",
     "\A3\Data_F\Flags\flag_blue_CO.paa",
-    "\A3\Data_F\Flags\flag_NATO_CO.paa",
-	"\A3\Data_F\Flags\flag_rcrystal_co.paa",
-	"core\img\fr_co.paa",
-	"\A3\Data_F\Flags\flag_us_co.paa"
+    '#(argb,8,8,3)color(0.9,0.9,0,1)',
+    "\A3\Data_F\Flags\flag_NATO_CO.paa"
 ];
 
 //Respawn
 btc_body_bagTicketPlayer = 1;
 btc_body_enemyTicket = 1;
+
+btc_startDate = [2035, 6, 24, 12, 15];

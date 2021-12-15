@@ -50,6 +50,15 @@ addMissionEventHandler ["BuildingChanged", btc_rep_fnc_buildingchanged];
     [btc_rep_malus_player_respawn, _player] call btc_rep_fnc_change;
 }] call CBA_fnc_addEventHandler;
 
+["ace_explosives_detonate", {
+    params ["_player", "_explosive", "_delay"];
+    [
+        btc_door_fnc_broke,
+        ([3, _explosive, 0.5] call btc_door_fnc_get) + [_player, 1, 2],
+        _delay
+    ] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
+
 addMissionEventHandler ["HandleDisconnect", {
     params ["_headless"];
     if (_headless in (entities "HeadlessClient_F")) then {
@@ -111,28 +120,9 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
     params ["_obj"];
     [_obj, -1] call ace_cargo_fnc_setSpace;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
-["Land_Cargo20_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,50] call ace_cargo_fnc_setSpace;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
-
-["Land_Cargo20_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,10] call ace_cargo_fnc_setSize;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
-
-["Land_Cargo40_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,100] call ace_cargo_fnc_setSpace;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
-
-["Land_Cargo40_military_green_F","InitPost",{
-	params ["_obj"];
-	[_obj,25] call ace_cargo_fnc_setSize;
-}, true, [], true] call CBA_fnc_addClassEventHandler;
 {
     [_x, "InitPost", {
         params ["_obj"];
         [_obj, 50] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["CUP_MTVR_Base", "Truck_01_base_F","rhsusf_M977A4_BKIT_usarmy_d","rhsusf_M977A4_usarmy_d"];
+} forEach ["CUP_MTVR_Base", "Truck_01_base_F"];

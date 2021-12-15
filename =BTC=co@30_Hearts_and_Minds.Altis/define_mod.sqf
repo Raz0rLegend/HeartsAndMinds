@@ -4,35 +4,59 @@ btc_custom_loc = [
     Possible types: "NameVillage","NameCity","NameCityCapital","NameLocal","Hill","Airport","NameMarine", "StrongpointArea", "BorderCrossing", "VegetationFir"
     EXAMPLE: [[13132.8,3315.07,0.00128174],"NameVillage","Mountain 1",800,true]
 */
-[[10495.3,7565.11,0.00116634],"StrongpointArea","Checkpoint Franhtka",300,true],
-[[5587.56,5187.63,0],"NameVillage","Al Djozal",500,true],
-[[3182.21,4651.11,0],"NameVillage","Al Mars Haiy",400,true],
-[[6570.02,9010.75,0],"NameVillage","Al Monha Kho",500,true],
-[[6316.12,7649.76,0],"NameVillage","Al Talibhé",300,true],
-[[4849.98,7584.96,0],"NameVillage","Walid St York",500,true],
-[[5329.34,6044.63,0],"NameVillage","Al KrimTarbka",500,true],
-[[4817.35,5459.56,0],"NameVillage","Al Majdid",400,true],
-[[18822.6,5054.56,0],"NameVillage","Al Saoudi",400,true],
-[[17431.1,7420.71,0],"NameVillage","Al MaiKouy West",500,true],
-[[18698.2,6614.82,0],"NameVillage","Al MaiKouy South",500,true],
-[[19707.3,7115.92,0],"NameVillage","Al MaiKouy East",500,true],
-[[13661.3,1767.47,0],"NameLocal","Four Dahgy",300,true],
-[[4759.64,8970.23,0],"Airport","Al Navion",400,true],
-[[18839.8,18947,0],"Airport","Al Cesnnah",700,true],
-[[18467.7,3602.0,0],"Airport","Al Boying",300,true],
-[[10141,5667.87,0],"NameLocal","Fayarhan",400,true],
-[[11032.6,2157.21,0],"NameLocal","Usine Schmack",200,true],
-[[16965,16759.4,0],"NameLocal","Mahkroudi",200,true],
-[[17212.7,12383.2,0],"NameLocal","Barhounha",200,true],
-[[10973.9,6350.85,0],"NameLocal","Fort Kamlesh",300,true],
-[[18632.8,1811.77,0],"NameVillage","Dubhay Gazoil",700,true],
-[[11607.6,9790.37,0],"NameVillage","Frah Anhk",400,true],
-[[7038.16,11255.2,0],"NameVillage","Al Payich",500,true],
-[[11626,9796.16,0],"NameVillage","Sarhvaha",500,true],
-[[19697.3,10024.1,0],"NameVillage","Bordhurn",500,true],
-[[4338.57,12146.1,0.00143051],"NameVillage","Usine Frahnia",300,true],
-[[16147.7,8655.96,0.0015564],"NameLocal","Frachilha",300,true],
-[[5749.11,16532,0.00153351],"NameVillage","Al Vahoub",400,true]														   
+
+//Big City
+
+[[8031,1645,0],"NameVillage","Al Buhrjä",500,true],
+[[2412,8002,0],"NameCity","Ben Rihkar",700,true],
+[[7115,3555,0],"NameVillage","Sidy Bhool",800,true],
+[[2539,6420,0],"NameCity","Al MarsHaïl",700,true],
+[[8882,2382,0],"NameCity","Babel Hoèd",800,true],
+[[2686,5763,0],"NameCity","Al Djoni",700,true],
+[[8544,3838,0],"NameVillage","Thunis",800,true],
+[[2392,5033,0],"NameCity","Pol Nhareff",650,true],
+[[8162,4346,0],"NameVillage","Al BurghKamiy",700,true],
+[[1065,5451,0],"NameCity","Khranty",800,true],
+[[6337,3138,0],"NameVillage","Fra Hank",650,true],
+[[1755,7740,0],"NameCity","Al Djozal",700,true],
+[[2265,971,0],"NameCity","Kahi Vhine",650,true],
+[[778,6764,0],"NameVillage","Bonh Djour",750,true],
+[[1711,3496,0],"NameCityCapital","Jawhad",950,true],
+[[1595,5273,0],"NameVillage","Chihanti",700,true],
+[[3964,10007,0],"NameCity","Balhadur",550,true],
+
+//Small Cities
+
+[[5065,10074,0],"NameLocal","Roh Farry",550,true],
+[[906,6278,0],"NameLocal","Landhary",600,true],
+[[3806,8888,0],"NameLocal","Bouhdaly",400,true],
+[[1654,9602,0],"NameLocal","Dhouza",550,true],
+[[1654,9602,0],"NameLocal","Djamhiz",600,true],
+[[1397,9922,0],"NameLocal","Frazhi",450,true],
+
+// Strong Point
+
+[[9024,3805,0],"StrongpointArea","Checkpoint Boulhra",300,true],
+[[7905,9261,0],"StrongpointArea","Checkpoint Khandry",400,true],
+[[8710,2567,0],"StrongpointArea","Checkpoint Kourha",300,true],
+[[4681,2604,0],"StrongpointArea","Checkpoint Bouldy",250,true],
+[[7108,9157,0],"StrongpointArea","Checkpoint Strady ",300,true],
+[[4187,1120,0],"StrongpointArea","Checkpoint Larhby",250,true],
+[[3230,9852,0],"StrongpointArea","Checkpoint Stramby",250,true],
+[[3921,9482,0],"StrongpointArea","Checkpoint Probhï",250,true],
+[[5474,6310,0],"StrongpointArea","Checkpoint Trah",250,true],
+[[9174,6140,0],"StrongpointArea","Checkpoint Rhola",250,true],
+[[3570,2021,0],"NameCityCapital","Checkpoint Bardha",700,true],
+
+//Hill
+
+[[4840,2163,0],"Hill","Hill Fhouldary",500,true],
+[[5829,9021,0],"Hill","Hill Plohary", 500,true],
+
+//FOB
+[[4758,1820,0],"NameCityCapital","FOB Kharym",700,true],
+[[3570,2021,0],"NameCityCapital","Checkpoint Bardha",700,true],
+[[8279,8816,0],"NameCityCapital","FOB Muhzet",700,true]
 ];
 
 /*
