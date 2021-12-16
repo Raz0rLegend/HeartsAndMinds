@@ -123,7 +123,7 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 
 ["Land_Cargo20_military_green_F","InitPost",{
 	params ["_obj"];
-	[_obj,50] call ace_cargo_fnc_setSpace;
+	[_obj,40] call ace_cargo_fnc_setSpace;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 ["Land_Cargo20_military_green_F","InitPost",{
@@ -133,7 +133,7 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 
 ["Land_Cargo40_military_green_F","InitPost",{
 	params ["_obj"];
-	[_obj,100] call ace_cargo_fnc_setSpace;
+	[_obj,80] call ace_cargo_fnc_setSpace;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 ["Land_Cargo40_military_green_F","InitPost",{
@@ -143,6 +143,20 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 {
     [_x, "InitPost", {
         params ["_obj"];
-        [_obj, 50] call ace_cargo_fnc_setSpace;
+        [_obj, 30] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["CUP_MTVR_Base", "Truck_01_base_F","rhsusf_M977A4_BKIT_usarmy_d","rhsusf_M977A4_usarmy_d"];
+} forEach ["Truck_01_base_F","rhsusf_M977A4_BKIT_usarmy_d","rhsusf_M977A4_usarmy_d","rnt_lkw_7t_mil_kat_i_transport_trope"];
+{
+    [_x, "InitPost", {
+        params ["_obj"];
+        [_obj, 20] call ace_cargo_fnc_setSpace;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach ["rnt_lkw_5t_mil_kat_i_transport_trope"];
+{
+    [_x, "InitPost", {
+        params ["_obj"];
+        [_obj, 8] call ace_cargo_fnc_setSpace;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach ["BLABLABLA3"];
+
+
