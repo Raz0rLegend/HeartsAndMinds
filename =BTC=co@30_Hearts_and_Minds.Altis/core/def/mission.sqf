@@ -480,12 +480,17 @@ btc_construction_array =
         ],
         [
             //"Static"
+			"Redd_Milan_Static",
+			"BWA3_MRS120_Tropen",
+			"rnt_mg3_static_ai",
+			"rnt_GMW_static_ai",
+			"RHS_TOW_Tripod_USMC_WD",
+			"RHS_Stinger_AA_pod_USMC_WD",
+			"I_HMG_02_high_F"
+			
         ] + (_allClassSorted select {(
-            _x isKindOf "GMG_TriPod" ||
-            {_x isKindOf "StaticMortar"} ||
-            {_x isKindOf "HMG_01_base_F"} ||
-            {_x isKindOf "AA_01_base_F"} ||
-            {_x isKindOf "AT_01_base_F"}) && {
+             _x isKindOf "GMG_TriPod" ||
+            {_x isKindOf "HMG_01_base_F"} && {
                 getNumber (_cfgVehicles >> _x >> "side") isEqualTo ([east, west, independent, civilian] find btc_player_side)
             }
         }),
