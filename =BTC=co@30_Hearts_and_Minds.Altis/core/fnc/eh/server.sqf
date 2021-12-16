@@ -140,18 +140,21 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 	params ["_obj"];
 	[_obj,25] call ace_cargo_fnc_setSize;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
+
 {
     [_x, "InitPost", {
         params ["_obj"];
         [_obj, 30] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["Truck_01_base_F","rhsusf_M977A4_BKIT_usarmy_d","rhsusf_M977A4_usarmy_d","rnt_lkw_7t_mil_kat_i_transport_trope"];
+} forEach ["Truck_01_base_F","rhsusf_M977A4_BKIT_usarmy_d","rhsusf_M977A4_usarmy_d","rnt_lkw_7t_mil_gl_kat_i_transport_trope"];
+
 {
     [_x, "InitPost", {
         params ["_obj"];
         [_obj, 20] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["rnt_lkw_5t_mil_kat_i_transport_trope"];
+} forEach ["rnt_lkw_5t_mil_gl_kat_i_transport_trope"];
+
 {
     [_x, "InitPost", {
         params ["_obj"];
