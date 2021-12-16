@@ -25,7 +25,7 @@ params [
     ["_vehicle", objNull, [objNull]]
 ];
 
-if !(_vehicle isKindOf "B_APC_Tracked_01_CRV_F" || _vehicle isKindOf "rhsusf_stryker_m1132_m2_base") exitWith {};
+if !(_vehicle isKindOf "B_APC_Tracked_01_CRV_F" || _vehicle isKindOf "rhsusf_stryker_m1132_m2_base" || _vehicle isKindOf "Redd_Tank_Fuchs_1A4_Pi_Tropentarn") exitWith {};
 
 if (btc_ied_deleteOn > -1) exitWith {};
 
@@ -63,4 +63,4 @@ btc_ied_deleteOn = [{
         [btc_rep_bonus_IEDCleanUp, player] remoteExecCall ["btc_rep_fnc_change", 2];
         ["btc_ied_deleted", [_pos, player]] call CBA_fnc_serverEvent;
     };
-}, 1, [_vehicle, (_maxWidth max _maxLength) / 2]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_vehicle, 5,(_maxWidth max _maxLength) / 2]] call CBA_fnc_addPerFrameHandler;
