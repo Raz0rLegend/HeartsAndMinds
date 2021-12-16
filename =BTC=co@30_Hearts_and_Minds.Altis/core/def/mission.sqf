@@ -473,7 +473,10 @@ btc_construction_array =
             "Land_Mil_WallBig_4m_F",
             "Land_Mil_WallBig_Corner_F",
             "Land_PortableLight_double_F",
-            "Land_Pod_Heli_Transport_04_medevac_black_F"
+            "Land_Pod_Heli_Transport_04_medevac_black_F",
+			"Land_HBarrierTower_F",
+            "Land_HBarrierWall_corner_F",
+            "Land_HBarrierWall6_F"													  
         ],
         [
             //"Static"
@@ -514,9 +517,10 @@ btc_construction_array =
         [
             //"Vehicle logistic"
             "ACE_Wheel",
-            "ACE_Track",
+            "ACE_Track",						 
             "B_Slingload_01_Ammo_F",
-            "B_Slingload_01_Fuel_F"
+            "B_Slingload_01_Fuel_F",
+			"Land_CanisterFuel_F"
         ] + (_allClassSorted select {_x isKindOf "FlexibleTank_base_F"})
     ]
 ];
@@ -542,8 +546,8 @@ btc_log_fnc_get_nottowable = {
     switch (true) do {
         //The tower is a tank so it can't tow: plane and helicopter
         case (_tower isKindOf "Tank") : {["Plane", "Helicopter"];};
-        case (_tower isKindOf "Truck_F") : {["Plane", "Helicopter"];};
-        case (_tower isKindOf "Truck") : {["Plane", "Helicopter"];};
+        case (_tower isKindOf "Truck_F") : {[];};
+        case (_tower isKindOf "Truck") : {[];};
         case (_tower isKindOf "Ship") : {[];};
         //The tower is a car so it can't tow: truck, tank, plane and helicopter
         case (_tower isKindOf "Car") : {["Truck", "Truck_F", "Tank", "Plane", "Helicopter"];};
@@ -631,6 +635,12 @@ switch (_p_en) do {
         btc_type_motorized_armed = btc_type_motorized_armed + ["I_Heli_light_03_F", "I_G_Offroad_01_F"];
         btc_type_units = btc_type_units - ["I_C_Soldier_Camo_F"];
     };
+	case "UK3CB_TKA_O" :{				   
+		btc_type_motorized = btc_type_motorized + ["UK3CB_TKA_O_Tigr_FFV","UK3CB_TKA_O_Cessna_T41","UK3CB_TKA_O_Antonov_AN2"];	
+		btc_type_motorized_armed = btc_type_motorized_armed + ["UK3CB_TKA_O_BM21","UK3CB_TKA_O_T72A","UK3CB_TKA_O_T72BM","UK3CB_TKA_O_BTR70","UK3CB_TKA_O_BTR80a","UK3CB_TKA_O_M113_M2","UK3CB_TKA_O_Tigr_STS","UK3CB_TKA_O_Cessna_T41_Armed","UK3CB_TKA_O_Antonov_AN2_Armed_Rockets","UK3CB_TKA_O_Antonov_AN2_Armed_Bombs","UK3CB_MDF_O_Mystere","UK3CB_MDF_O_Mystere_CAS1","UK3CB_MDF_O_Mystere_AA1","UK3CB_TKA_O_UH1H_Gunship","UK3CB_TKA_O_Mi_24P","UK3CB_TKA_O,Mi8AMTSh"];
+		btc_type_motorized_armed = btc_type_motorized_armed - ["UK3CB_TKM_O_BTR40","UK3CB_TKM_O_BTR40_MG","UK3CB_TKM_O_LR_Closed","UK3CB_TKM_O_LR_AGS30","UK3CB_TKM_O_LR_M2","UK3CB_TKM_O_LR_Open","UK3CB_TKM_O_LR_SPG9","UK3CB_TKM_O_LR_SF_AGS30","UK3CB_TKM_O_LR_SF_M2"];
+		btc_type_units = btc_type_units - ["UK3CB_TKM_O_PKM_nest","UK3CB_TKM_O_PKM_nest_des"];	
+	}	
 };
 
 //Chem
@@ -641,27 +651,27 @@ btc_spect_range = 1000;
 btc_spect_updateOn = -1;
 
 //Rep
-btc_rep_bonus_cache = 100;
+btc_rep_bonus_cache = 50;
 btc_rep_bonus_civ_hh = 3;
 btc_rep_bonus_disarm = 15;
-btc_rep_bonus_hideout = 200;
+btc_rep_bonus_hideout = 100;
 btc_rep_bonus_mil_killed = 0.25;
 btc_rep_bonus_IEDCleanUp = 10;
-btc_rep_bonus_removeTag = 0.25;
+btc_rep_bonus_removeTag = 3;
 btc_rep_bonus_removeTagLetter = 0.5;
 btc_rep_bonus_foodGive = 0.5;
 
 btc_rep_malus_civ_hd = - 2;
 btc_rep_malus_animal_hd = - 1;
-btc_rep_malus_civ_killed = - 10;
-btc_rep_malus_animal_killed = - 5;
+btc_rep_malus_civ_killed = - 25;
+btc_rep_malus_animal_killed = - 2;
 btc_rep_malus_civ_suppressed = - 4;
-btc_rep_malus_player_respawn = - 10;
-btc_rep_malus_veh_killed = - 25;
-btc_rep_malus_building_damaged = - 2.5;
-btc_rep_malus_building_destroyed = - 5;
+btc_rep_malus_player_respawn = - 20;
+btc_rep_malus_veh_killed = - 30;
+btc_rep_malus_building_damaged = - 15;
+btc_rep_malus_building_destroyed = - 50;
 btc_rep_malus_foodRemove = - btc_rep_bonus_foodGive;
-btc_rep_malus_breakDoor = - 2;
+btc_rep_malus_breakDoor = - 10;
 btc_rep_malus_wheelChange = - 7;
 
 //Skill
@@ -673,15 +683,16 @@ btc_units_owners = [];
 btc_player_type = ["SoldierWB", "SoldierEB", "SoldierGB"] select ([west, east, independent] find btc_player_side);
 
 //Door
-btc_door_breaking_time = 60;
+btc_door_breaking_time = 35;
 
 //Flag
 btc_flag_textures = [
     "\A3\Data_F\Flags\flag_red_CO.paa",
     "\A3\Data_F\Flags\flag_green_CO.paa",
     "\A3\Data_F\Flags\flag_blue_CO.paa",
-    '#(argb,8,8,3)color(0.9,0.9,0,1)',
-    "\A3\Data_F\Flags\flag_NATO_CO.paa"
+    "\A3\Data_F\Flags\flag_NATO_CO.paa",
+	"\A3\Data_F\Flags\flag_rcrystal_co.paa",										 					  
+	"\A3\Data_F\Flags\flag_us_co.paa"										 
 ];
 
 //Respawn

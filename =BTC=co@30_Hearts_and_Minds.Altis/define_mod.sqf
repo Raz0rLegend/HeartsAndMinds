@@ -4,7 +4,6 @@ btc_custom_loc = [
     Possible types: "NameVillage","NameCity","NameCityCapital","NameLocal","Hill","Airport","NameMarine", "StrongpointArea", "BorderCrossing", "VegetationFir"
     EXAMPLE: [[13132.8,3315.07,0.00128174],"NameVillage","Mountain 1",800,true]
 */
-
 //Big City
 
 [[8031,1645,0],"NameVillage","Al Buhrjä",500,true],
@@ -56,7 +55,7 @@ btc_custom_loc = [
 //FOB
 [[4758,1820,0],"NameCityCapital","FOB Kharym",700,true],
 [[3570,2021,0],"NameCityCapital","Checkpoint Bardha",700,true],
-[[8279,8816,0],"NameCityCapital","FOB Muhzet",700,true]
+[[8279,8816,0],"NameCityCapital","FOB Muhzet",700,true]													   
 ];
 
 /*
