@@ -1,7 +1,7 @@
 # InGame Documentation
 
 ## Headless & Database
-This mission automatically uses one Headless client when available.
+This mission support ACE Headless.
 
 This mission has a database system. Enemy units, towns, hideouts, cache, objects created or static weapons assembled by players or Zeus, vehicles, vehicle in vehicle, tag, players markers on global channel are saved. All admin can save mission progress at any time with his self interaction key.
 
@@ -28,7 +28,7 @@ You can detect the origin of electromagnetic field with spectrum devices. The am
 ### House doors:
 Civilian house door can be close. Depend on reputation level, civilian will lock their door and stay inside. Under low, all doors are locked, above normal, all door are unlocked. 
 ### Break locked door:
-You can still enter by breaking door lock with a wirecutter.
+You can still enter by breaking door lock with a wirecutter. Or by using explosive.
 
 ## Vehicles
 ### Respawn:
@@ -151,7 +151,7 @@ Any player can give orders to civilians. To do this, just open your self interac
 
 If you want to give an order to just one unit, interact with it (object interaction).
 
-You can also use a horn to ask civilians to stop their mouvement from a vehicle. Turning ON beacons or siren will continuously ask civilians to let you pass first. Combining beacons and siren will increase the range of effectiveness.
+You can also use a horn to ask civilians to stop their movement from a vehicle. Turning ON beacons or siren will continuously ask civilians to let you pass first. Combining beacons and siren will increase the range of effectiveness.
 
 You can also drop leaflets to ask all civilians in a circle of 200m to evacuate to a religious building (if not available a safe area) with a AR-2 drone.
 
