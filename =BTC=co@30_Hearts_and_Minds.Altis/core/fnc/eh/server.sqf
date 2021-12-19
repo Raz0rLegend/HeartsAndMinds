@@ -141,12 +141,53 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 	[_obj,25] call ace_cargo_fnc_setSize;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
+//BW
+{
+    [_x, "InitPost", {
+        params ["_obj"];
+        [_obj, 5] call ace_cargo_fnc_setSpace;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach [  
+			"BWA3_Eagle_FLW100_Tropen",
+			"BWA3_Dingo2_FLW100_MG3_CG13_Tropen",
+			"BWA3_Dingo2_FLW200_M2_CG13_Tropen",
+			"BWA3_Dingo2_FLW200_GMW_CG13_Tropen",
+			"Redd_Tank_Gepard_1A2_Tropentarn",
+			"KGB_B_MRAP_03_hmg_F_DES",
+			"Redd_Tank_Wiesel_1A2_TOW_Tropentarn",
+			"Redd_Tank_Wiesel_1A4_MK20_Tropentarn",
+			"rnt_sppz_2a2_luchs_tropentarn",
+			"Redd_Tank_Fuchs_1A4_Pi_Tropentarn",
+			"Redd_Tank_Fuchs_1A4_San_Tropentarn",
+			"BWA3_Puma_Tropen",
+			"BWA3_Leopard2_Tropen"];
+
+//US
+{
+	[_x, "InitPost", {
+        params ["_obj"];
+        [_obj, 5] call ace_cargo_fnc_setSpace;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach [  
+			"rhsusf_mrzr4_d",
+			"rhsusf_m966_d",
+			"rhsusf_m1151_mk19_v2_usarmy_d",
+			"rhsusf_m1151_m2_v2_usarmy_d",
+			"rhsusf_m1151_m240_v2_usarmy_d",
+			"rhsusf_m1165a1_gmv_m2_m240_socom_d",
+			"RHS_M2A3_BUSKI",
+			"rhsusf_stryker_m1132_m2_d"];
 {
     [_x, "InitPost", {
         params ["_obj"];
         [_obj, 30] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["Truck_01_base_F","rhsusf_M977A4_BKIT_usarmy_d","rhsusf_M977A4_usarmy_d","rnt_lkw_7t_mil_gl_kat_i_transport_trope"];
+} forEach [
+			"Truck_01_base_F",
+			"rhsusf_M977A4_BKIT_usarmy_d",
+			"rhsusf_M977A4_usarmy_d",
+			"rnt_lkw_7t_mil_gl_kat_i_transport_trope",
+			"rhsusf_M1084A1P2_B_D_fmtv_usarmy"];
 
 {
     [_x, "InitPost", {
@@ -155,11 +196,6 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach ["rnt_lkw_5t_mil_gl_kat_i_transport_trope"];
 
-{
-    [_x, "InitPost", {
-        params ["_obj"];
-        [_obj, 8] call ace_cargo_fnc_setSpace;
-    }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["BLABLABLA3"];
+
 
 
