@@ -1,7 +1,7 @@
 
 loadScreen = "core\img\sof.jpg";
 author = "JOHN-117 / Raz0rLegend / VDauphin";
-onLoadName = Spirit Of Fire - Projet OTAN;
+onLoadName = Spirit Of Fire - H&M Projet OTAN;
 onLoadMission = Bienvenue sur le serveur Projet OTAN de la Communauté Spirit Of Fire. Amusez vous bien !;
 enabledebugconsole = 1;
 

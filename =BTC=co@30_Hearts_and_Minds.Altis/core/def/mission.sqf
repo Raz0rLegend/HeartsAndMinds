@@ -644,7 +644,7 @@ switch (_p_en) do {
 		btc_type_motorized = btc_type_motorized + ["UK3CB_TKA_O_Tigr_FFV","UK3CB_TKA_O_Cessna_T41","UK3CB_TKA_O_Antonov_AN2"];	
 		btc_type_motorized_armed = btc_type_motorized_armed + ["UK3CB_TKA_O_BM21","UK3CB_TKA_O_T72A","UK3CB_TKA_O_T72BM","UK3CB_TKA_O_BTR70","UK3CB_TKA_O_BTR80a","UK3CB_TKA_O_M113_M2","UK3CB_TKA_O_Tigr_STS","UK3CB_TKA_O_Cessna_T41_Armed","UK3CB_TKA_O_Antonov_AN2_Armed_Rockets","UK3CB_TKA_O_Antonov_AN2_Armed_Bombs","UK3CB_MDF_O_Mystere","UK3CB_MDF_O_Mystere_CAS1","UK3CB_MDF_O_Mystere_AA1","UK3CB_TKA_O_UH1H_Gunship","UK3CB_TKA_O_Mi_24P","UK3CB_TKA_O,Mi8AMTSh"];
 		btc_type_motorized_armed = btc_type_motorized_armed - ["UK3CB_TKM_O_BTR40","UK3CB_TKM_O_BTR40_MG","UK3CB_TKM_O_LR_Closed","UK3CB_TKM_O_LR_AGS30","UK3CB_TKM_O_LR_M2","UK3CB_TKM_O_LR_Open","UK3CB_TKM_O_LR_SPG9","UK3CB_TKM_O_LR_SF_AGS30","UK3CB_TKM_O_LR_SF_M2"];
-		btc_type_units = btc_type_units - ["UK3CB_TKM_O_PKM_nest","UK3CB_TKM_O_PKM_nest_des"];	
+		btc_type_mg = btc_type_mg - ["UK3CB_TKM_O_PKM_nest","UK3CB_TKM_O_PKM_nest_des"];	
 	}	
 };
 
