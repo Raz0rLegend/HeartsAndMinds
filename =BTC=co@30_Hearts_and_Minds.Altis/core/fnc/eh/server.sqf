@@ -145,7 +145,7 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 {
     [_x, "InitPost", {
         params ["_obj"];
-        [_obj, 5] call ace_cargo_fnc_setSpace;
+        [_obj, 6] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach [  
 			"BWA3_Eagle_FLW100_Tropen",
@@ -198,6 +198,34 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 
 //Ammo Truck
 
+SOF_Magazines = []; 
+private _CfgMagazines = configFile >> "CfgMagazines"; 
+{
+    private _magsFilter = format ["(configName _x find '%1' == 0) && (getNumber (_x >> 'scope') == 2)", _x];
+    private _magsList = _magsFilter configClasses _CfgMagazines apply { configName _x };
+    SOF_Magazines append _magsList;
+} forEach [ 
+    "BWA3_" ,
+	"rhsusf" ,
+	"ACE",
+	"rhs_mag_"
+];
+
+{ 
+    [_x, "InitPost", { 
+		params ["_obj"];
+        [_obj, SOF_Magazines, true, true] call ace_arsenal_fnc_initbox; 
+    }, true, [], true] call CBA_fnc_addClassEventHandler; 
+} forEach [
+            "rhsusf_M977A4_AMMO_BKIT_usarmy_d",
+            "rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d",
+            "rhsusf_M977A4_AMMO_usarmy_d",
+            "rnt_lkw_7t_mil_gl_kat_i_mun_trope"];
+
+
+
+//test ammo
+/*
 {
     [_x, "InitPost", {
         params ["_obj"];
@@ -243,6 +271,7 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 		"BWA3_1Rnd_120mm_Mo_dpz_shells",
 		"BWA3_Fliegerfaust_Mag",
 		"BWA3_40Rnd_46x30_MP7",
+		"BWA3_40Rnd_46x30_MP7_SD",
 		"BWA3_12Rnd_45ACP_P12",
 		"BWA3_1Rnd_Flare_Multistar_Green",
 		"BWA3_1Rnd_Flare_Multistar_Red",
@@ -264,14 +293,54 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 		"BWA3_DM51A1",
 		"30Rnd_556x45_Stanag_Tracer_Red",
 		"rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_ucp",
-		"rhsusf_200rnd_556x45_mixed_box"]] call ace_arsenal_fnc_initBox;
+		"rhsusf_200rnd_556x45_mixed_box",
+		"rhs_mag_an_m14_th3",
+		"rhs_mag_an_m8hc",
+		"rhs_mag_m18_green",
+		"rhs_mag_m18_purple",
+		"rhs_mag_m18_red",
+		"rhs_mag_m18_yellow",
+		"rhs_mag_m67",
+		"rhs_mag_m69",
+		"rhs_mag_m7a3_cs",
+		"rhs_mag_mk84",
+		"rhs_mag_mk3a2",
+		"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",
+		"rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",
+		"rhs_mag_maaws_HE",
+		"rhs_mag_maaws_HEDP",
+		"rhs_mag_maaws_HEAT",
+		"rhs_fim92_mag",
+		"rhs_fgm148_magazine_AT",
+		"rhs_fgm172a_magazine_AT",
+		"rhs_fgm172b_magazine_MPV",
+		"rhs_mag_m4009",
+		"rhs_mag_M397_HET",
+		"rhs_mag_M433_HEDP",
+		"rhs_mag_M441_HE",
+		"rhs_mag_M583A1_white",
+		"rhs_mag_M585_white_cluster",
+		"rhs_mag_m661_green",
+		"rhs_mag_m662_red",
+		"rhs_mag_M663_green_cluster",
+		"rhs_mag_M664_red_cluster",
+		"rhs_mag_m713_Red",
+		"rhs_mag_m714_White",
+		"rhs_mag_m715_Green",
+		"rhs_mag_m716_yellow",
+		"rhs_mag_smaw_HEDP",
+		"rhs_mag_smaw_HEAA",
+		"rhsusf_mag_15Rnd_9x19_JHP",
+		"rhsusf_mag_40Rnd_46x30_FMJ",
+		"rhsusf_20Rnd_762x51_m62_Mag",
+		"rhsusf_20Rnd_762x51_m993_Mag"]] call ace_arsenal_fnc_initBox;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach [
 			"rhsusf_M977A4_AMMO_BKIT_usarmy_d",
 			"rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d",
 			"rhsusf_M977A4_AMMO_usarmy_d",
 			"rnt_lkw_7t_mil_gl_kat_i_mun_trope"];
-
+*/
 
 
 
