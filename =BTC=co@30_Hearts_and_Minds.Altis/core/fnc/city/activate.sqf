@@ -62,7 +62,7 @@ if (!(_city getVariable ["initialized", false])) then {
         case "Hill" : {1};
         case "VegetationFir" : {1};
         case "BorderCrossing" : {2};
-        case "NameLocal" : {2.5};
+        case "NameLocal" : {3.5};
         case "StrongpointArea" : {3};
         case "NameVillage" : {3.5};
         case "NameCity" : {5};
@@ -106,7 +106,7 @@ if (_data_units isNotEqualTo []) then {
         case "Hill" : {4};
         case "VegetationFir" : {4};
         case "BorderCrossing" : {7};
-        case "NameLocal" : {7};
+        case "NameLocal" : {8};
         case "StrongpointArea" : {8};
         case "NameVillage" : {8};
         case "NameCity" : {16};
@@ -119,6 +119,7 @@ if (_data_units isNotEqualTo []) then {
     if (_has_en) then {
         private _finalNumberOfGroup = _p_mil_group_ratio * _numberOfGroup;
         private _numberOfHouseGroup = _finalNumberOfGroup * btc_p_mil_wp_houseDensity;
+		private _closest = [_city, btc_city_all select {!(_x getVariable ["active", false])}, false] call btc_fnc_find_closecity;  
         for "_i" from 1 to round _finalNumberOfGroup do {
             [
                 _city,
@@ -126,6 +127,9 @@ if (_data_units isNotEqualTo []) then {
                 2 + round random 1,
                 [["PATROL", "SENTRY"] selectRandomWeighted [0.7, 0.3], "HOUSE"] select (_i <= _numberOfHouseGroup)
             ] call btc_mil_fnc_create_group;
+        };
+		for "_i" from 1 to (1 + round random 2) do {
+            [[_closest, [_city, _spawningRadius/3] call CBA_fnc_randPos, 1, selectRandom btc_type_motorized_armed], btc_fnc_mil_send] call btc_fnc_delay_exec;																																						
         };
     };
 
