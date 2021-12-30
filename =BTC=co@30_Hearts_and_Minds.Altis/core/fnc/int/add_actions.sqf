@@ -3,7 +3,7 @@
 Function: btc_int_fnc_add_actions
 
 Description:
-    Add actions use in game.
+    Fill me when you edit me !
 
 Parameters:
 
@@ -95,7 +95,7 @@ _action = ["Search_intel", localize "STR_A3_Showcase_Marksman_BIS_tskIntel_title
         }, {true}, {}, [_helipad], [0, 0, 0], 5] call ace_interact_menu_fnc_createAction;
         [_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     };
-} forEach [[btc_create_object, btc_create_object_point], [btc_create_object_1, btc_create_object_point_1], [btc_create_object_2, btc_create_object_point_2], [btc_create_object_3, btc_create_object_point_3]];
+} forEach [[btc_create_object, btc_create_object_point], [btc_create_object_1, btc_create_object_point_1], [btc_create_object_2, btc_create_object_point_2], [btc_create_object_3, btc_create_object_point_3], [btc_create_object_4, btc_create_object_point_4]];
 
 //Logistic
 _action = ["Logistic", localize "STR_BTC_HAM_ACTION_LOC_MAIN", "\A3\ui_f\data\igui\cfg\simpleTasks\letters\L_ca.paa", {}, {true}] call ace_interact_menu_fnc_createAction;
