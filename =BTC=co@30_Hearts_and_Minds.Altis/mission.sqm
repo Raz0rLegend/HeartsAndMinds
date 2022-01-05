@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2289;
+		nextID=2339;
 	};
 	class Camera
 	{
-		pos[]={8556.9395,149.92398,6955.7236};
-		dir[]={-0.21483076,-0.25999919,-0.94144845};
-		up[]={-0.057845164,0.96561277,-0.25349128};
-		aside[]={-0.97497225,8.8184606e-008,0.22248201};
+		pos[]={8563.834,137.31027,6820.75};
+		dir[]={-0.63214529,-0.35325089,0.68964601};
+		up[]={-0.23869559,0.93552756,0.26040766};
+		aside[]={0.73717272,-7.21775e-009,0.67570901};
 	};
 };
 binarizationWanted=0;
@@ -160,6 +160,7 @@ addons[]=
 	"Redd_Tank_Wiesel_1A2_TOW",
 	"bwa3_dingo2",
 	"bwa3_eagle",
+	"Edit_BW_SOF",
 	"BW_Choppers",
 	"bwa3_leopard2",
 	"bwa3_puma",
@@ -207,7 +208,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=108;
+		items=109;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -787,119 +788,125 @@ class AddonsMetaData
 		};
 		class Item90
 		{
+			className="Edit_BW_SOF";
+			name="BWmod Tweaks";
+			author="Raz0rLegend";
+		};
+		class Item91
+		{
 			className="BW_Choppers";
 			name="BW_Choppers";
 		};
-		class Item91
+		class Item92
 		{
 			className="bwa3_leopard2";
 			name="Bundeswehr - MBT Leopard 2";
 			author="BW-Mod";
 			url="http://www.bwmod.de/index.php/inhalt/download";
 		};
-		class Item92
+		class Item93
 		{
 			className="bwa3_puma";
 			name="Bundeswehr - IFV Puma";
 			author="BW-Mod";
 			url="http://www.bwmod.de/index.php/inhalt/download";
 		};
-		class Item93
+		class Item94
 		{
 			className="bwa3_tiger";
 			name="Bundeswehr - UH Tiger";
 			author="BW-Mod";
 			url="http://www.bwmod.de/index.php/inhalt/download";
 		};
-		class Item94
+		class Item95
 		{
 			className="USAF_MQ9";
 			name="USAF_MQ9";
 			author="USAF Mod Team";
 		};
-		class Item95
+		class Item96
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item96
+		class Item97
 		{
 			className="A3_Structures_F_Exp_Infrastructure";
 			name="Arma 3 Apex - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item97
+		class Item98
 		{
 			className="A3_Props_F_Orange";
 			name="Arma 3 Orange - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item98
+		class Item99
 		{
 			className="A3_Data_F_Curator";
 			name="Arma 3 Zeus Update - Main Configuration";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item99
+		class Item100
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item100
+		class Item101
 		{
 			className="A3_Structures_F_Mark";
 			name="Arma 3 Marksmen - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item101
+		class Item102
 		{
 			className="UK3CB_Factions_ADE";
 			name="3CB Factions - ADE";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item102
+		class Item103
 		{
 			className="UK3CB_Factions_ADA";
 			name="3CB Factions - ADA";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item103
+		class Item104
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item104
+		class Item105
 		{
 			className="Xnooz_Press";
 			name="Xnooz_Press";
 		};
-		class Item105
+		class Item106
 		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item106
+		class Item107
 		{
 			className="A3_Structures_F_Enoch_Civilian";
 			name="Arma 3 Contact Platform - Civilian Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item107
+		class Item108
 		{
 			className="A3_Structures_F_Orange";
 			name="Arma 3 Orange - Buildings and Structures";
@@ -39799,18 +39806,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					singleType="ARRAY";
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -39819,6 +39814,18 @@ class CustomAttributes
 				{
 					singleType="SCALAR";
 					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
 				};
 			};
 		};
