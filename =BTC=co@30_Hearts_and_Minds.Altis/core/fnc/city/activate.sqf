@@ -62,7 +62,7 @@ if (!(_city getVariable ["initialized", false])) then {
         case "Hill" : {1};
         case "VegetationFir" : {1};
         case "BorderCrossing" : {2};
-        case "NameLocal" : {3.5};
+        case "NameLocal" : {2.5};
         case "StrongpointArea" : {3};
         case "NameVillage" : {3.5};
         case "NameCity" : {5};
@@ -106,7 +106,7 @@ if (_data_units isNotEqualTo []) then {
         case "Hill" : {4};
         case "VegetationFir" : {4};
         case "BorderCrossing" : {7};
-        case "NameLocal" : {8};
+        case "NameLocal" : {7};
         case "StrongpointArea" : {8};
         case "NameVillage" : {8};
         case "NameCity" : {16};
@@ -169,11 +169,11 @@ if (_data_units isNotEqualTo []) then {
 //Civilian Weapons Call
 //[getPos _city, 300] call btc_fnc_civ_get_weapons;
 //[[getPos _city, 300], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
-if (btc_global_reputation < 300) then {
+if (btc_global_reputation < 500) then {
     private _rand = random 8;
     if(_rand > 7) then {playSound3d [getMissionPath "core\sounds\IslamicCTP_1.ogg", _buildings select 0, false, getPosASL (_buildings select 0), 5, 1, 600];
     [_city, _spawningRadius, 1 + round random [0, 1, 2], random 1] call btc_fnc_mil_create_group;
-    [[getPos _city, 300], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
+    [[getPos _city, 400], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
     }};
 if (btc_p_animals_group_ratio > 0) then {
     if (_data_animals isNotEqualTo []) then {

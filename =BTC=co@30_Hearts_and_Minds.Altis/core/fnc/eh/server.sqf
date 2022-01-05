@@ -341,6 +341,3 @@ private _CfgMagazines = configFile >> "CfgMagazines";
 			"rhsusf_M977A4_AMMO_usarmy_d",
 			"rnt_lkw_7t_mil_gl_kat_i_mun_trope"];
 */
-
-
-
