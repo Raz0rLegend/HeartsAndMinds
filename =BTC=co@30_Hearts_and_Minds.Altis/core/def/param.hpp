@@ -237,7 +237,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_CACHE_DISTANCE"]);
         values[]={500,1000,1500,2000,2500,3000,3500,4000,5000};
         texts[]={"500 m","1000 m","1500 m","2000 m","2500 m","3000 m","3500 m","4000 m","5000 m"};
-        default = 2500;
+        default = 3000;
     };
     class btc_p_cache_info_ratio { //Cache info ratio:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_CACHE_RATIO"]);
@@ -255,7 +255,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_CACHE_HOUSEINFO"]);
         values[]={0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100};
         texts[]={"0%","1%","2%","3%","4%","5%","6%","7%","8%","9%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
-        default = 20;
+        default = 5;
     };
     class btc_p_skill_title { // << A3 Skill options >>
         title = $STR_BTC_HAM_PARAM_SKILL_TITLE;

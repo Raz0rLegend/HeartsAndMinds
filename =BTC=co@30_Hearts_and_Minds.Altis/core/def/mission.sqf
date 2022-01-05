@@ -489,7 +489,7 @@ btc_construction_array =
 			"I_HMG_02_high_F"
 			
         ] + (_allClassSorted select {(
-             _x isKindOf "GMG_TriPod" ||
+            _x isKindOf "GMG_TriPod" ||
             {_x isKindOf "HMG_01_base_F"}) && {
                 getNumber (_cfgVehicles >> _x >> "side") isEqualTo ([east, west, independent, civilian] find btc_player_side)
             }
@@ -522,7 +522,7 @@ btc_construction_array =
         [
             //"Vehicle logistic"
             "ACE_Wheel",
-            "ACE_Track",						 
+            "ACE_Track",
             "B_Slingload_01_Ammo_F",
             "B_Slingload_01_Fuel_F",
 			"Land_CanisterFuel_F"
