@@ -28,7 +28,7 @@ params [
 private _useful = btc_city_all select {
     !isNull _x &&
     !(_x getVariable ["occupied", false]) &&
-    !((_x getVariable ["type", ""]) in ["NameLocal", "Hill", "NameMarine"])
+    !((_x getVariable ["type", ""]) in ["NameLocal", "Hill", "NameMarine", "StrongpointArea"])
 };
 if (_useful isEqualTo []) exitWith {[] spawn btc_side_fnc_create;};
 private _city = selectRandom _useful;
@@ -44,7 +44,7 @@ if ( _r < 1)    then {
     _pos = getPos (selectRandom _roads);
     _vehpos = [_pos, 10] call btc_fnc_randomize_pos;
 } else {
-    _houses = [[_pos select 0, _pos select 1, 0], 200] call btc_fnc_getHouses;
+    _houses = ([[_pos select 0, _pos select 1, 0], 200] call btc_fnc_getHouses) select 0;
     _pos = selectRandom ((selectRandom _houses) buildingPos -1);
     _vehpos = [_pos select 0, _pos select 1, (_pos select 2) + 0.1];
 };
