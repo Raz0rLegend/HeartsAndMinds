@@ -158,9 +158,13 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
 			"Redd_Tank_Wiesel_1A4_MK20_Tropentarn",
 			"rnt_sppz_2a2_luchs_tropentarn",
 			"Redd_Tank_Fuchs_1A4_Pi_Tropentarn",
-			"Redd_Tank_Fuchs_1A4_San_Tropentarn",
 			"BWA3_Puma_Tropen",
 			"BWA3_Leopard2_Tropen"];
+			
+["Redd_Tank_Fuchs_1A4_San_Tropentarn","InitPost",{
+	params ["_obj"];
+	[_obj,12] call ace_cargo_fnc_setSpace;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 //US
 {
