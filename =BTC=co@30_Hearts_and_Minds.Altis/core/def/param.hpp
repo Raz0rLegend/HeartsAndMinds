@@ -63,13 +63,13 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_RALLYTIMER"]);
         values[]={0,5,10,30,60};
         texts[]={$STR_DISABLED,"5 min","10 min","30 min","60 min"};
-        default = 5;
+        default = 0;
     };
     class btc_p_respawn_ticketsAtStart { // Number of tickets at mission start:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_TICKETSATSTART"]);
         values[]={-1,0,1,2,3,4,5,10,15,20,25,30,50,70,100,150,200};
         texts[]={$STR_DISABLED,"0","1","2","3","4","5","10","15","20","25","30","50","70","100","150","200"};
-        default = 20;
+        default = 30;
     };
     class btc_p_respawn_ticketsShare { // Tickets are share between:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_TICKETSHARE"]);
@@ -79,8 +79,8 @@ class Params {
     };
     class btc_p_body_timeBeforeShowMarker { // Time before showing marker of dead player's body:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_TIMEBEFORESHOWMARKER"]);
-        values[]={-1,0,5,10,30,60};
-        texts[]={$STR_DISABLED,"0 min","5 min","10 min","30 min","60 min"};
+        values[]={-1,0,5,10,30,60,180};
+        texts[]={$STR_DISABLED,"0 min","5 min","10 min","30 min","60 min","3 h"};
         default = 10;
     };
     class btc_p_respawn_arsenal { // ACE Arsenal available on respawn after been killed:
@@ -405,7 +405,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_OTHER_SHOWREP"]);
         values[]={-1, 0, 1, 2, 3, 5, 10, 25, 50, 100, 200};
         texts[]={$STR_DISABLED, 0, 1, 2, 3, 5, 10, 25, 50, 100, 200};
-        default = 10;
+        default = 100;
     };
     class btc_p_city_radiusOffset { // Spawn city radius offset:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_OTHER_SPAWNRAD"]);
