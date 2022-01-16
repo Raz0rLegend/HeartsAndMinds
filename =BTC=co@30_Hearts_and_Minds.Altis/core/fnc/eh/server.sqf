@@ -121,6 +121,11 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
     [_obj, -1] call ace_cargo_fnc_setSpace;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
+["Land_Cargo20_IDAP_F","InitPost",{
+	params ["_obj"];
+	[_obj,20] call ace_cargo_fnc_setSize;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
 ["Land_Cargo20_military_green_F","InitPost",{
 	params ["_obj"];
 	[_obj,40] call ace_cargo_fnc_setSpace;
