@@ -641,7 +641,7 @@ switch (_p_en) do {
         btc_type_units = btc_type_units - ["I_C_Soldier_Camo_F"];
     };
 	case "UK3CB_TKM_O" :{				   
-		btc_type_motorized = btc_type_motorized + ["UK3CB_TKA_O_Tigr_FFV","UK3CB_TKA_O_Cessna_T41","UK3CB_TKA_O_Antonov_AN2"];	
+		btc_type_motorized = btc_type_motorized + ["UK3CB_TKA_O_Tigr_FFV","UK3CB_TKA_O_Cessna_T41","UK3CB_TKA_O_Antonov_AN2","UK3CB_TKM_O_BTR40","UK3CB_TKM_O_BTR40_MG"];	
 		btc_type_motorized_armed = btc_type_motorized_armed + ["UK3CB_TKA_O_BM21","UK3CB_TKA_O_T72A","UK3CB_TKA_O_T72BM","UK3CB_TKA_O_BTR70","UK3CB_TKA_O_BTR80a","UK3CB_TKA_O_M113_M2","UK3CB_TKA_O_Tigr_STS","UK3CB_TKA_O_Cessna_T41_Armed","UK3CB_TKA_O_Antonov_AN2_Armed_Rockets","UK3CB_TKA_O_Antonov_AN2_Armed_Bombs","UK3CB_MDF_O_Mystere","UK3CB_MDF_O_Mystere_CAS1","UK3CB_MDF_O_Mystere_AA1","UK3CB_TKA_O_UH1H_Gunship","UK3CB_TKA_O_Mi_24P","UK3CB_TKA_O,Mi8AMTSh"];
 		btc_type_motorized_armed = btc_type_motorized_armed - ["UK3CB_TKM_O_BTR40","UK3CB_TKM_O_BTR40_MG","UK3CB_TKM_O_LR_Closed","UK3CB_TKM_O_LR_AGS30","UK3CB_TKM_O_LR_M2","UK3CB_TKM_O_LR_Open","UK3CB_TKM_O_LR_SPG9","UK3CB_TKM_O_LR_SF_AGS30","UK3CB_TKM_O_LR_SF_M2"];
 		btc_type_mg = btc_type_mg - ["UK3CB_TKM_O_PKM_nest","UK3CB_TKM_O_PKM_nest_des"];	
@@ -649,7 +649,7 @@ switch (_p_en) do {
 };
 
 //Chem
-btc_chem_range = 3;
+btc_chem_range = 2;
 
 //Spect
 btc_spect_range = 1000;
@@ -658,12 +658,12 @@ btc_spect_updateOn = -1;
 //Rep
 btc_rep_bonus_cache = 50;
 btc_rep_bonus_civ_hh = 3;
-btc_rep_bonus_disarm = 15;
+btc_rep_bonus_disarm = 10;
 btc_rep_bonus_hideout = 100;
 btc_rep_bonus_mil_killed = 0.25;
-btc_rep_bonus_IEDCleanUp = 10;
-btc_rep_bonus_removeTag = 3;
-btc_rep_bonus_removeTagLetter = 0.5;
+btc_rep_bonus_IEDCleanUp = 2;
+btc_rep_bonus_removeTag = 0.5;
+btc_rep_bonus_removeTagLetter = 0.1;
 btc_rep_bonus_foodGive = 0.5;
 
 btc_rep_malus_civ_hd = - 2;
@@ -677,7 +677,7 @@ btc_rep_malus_building_damaged = - 15;
 btc_rep_malus_building_destroyed = - 50;
 btc_rep_malus_foodRemove = - btc_rep_bonus_foodGive;
 btc_rep_malus_breakDoor = - 10;
-btc_rep_malus_wheelChange = - 7;
+btc_rep_malus_wheelChange = - 15;
 
 //Skill
 btc_AI_skill = _p_skill;

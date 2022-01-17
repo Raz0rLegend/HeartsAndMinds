@@ -205,6 +205,13 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach ["rnt_lkw_5t_mil_gl_kat_i_transport_trope"];
 
+{
+	[_x,"InitPost", {
+		params ["_obj"];
+		[_obj,20] call ace_cargo_fnc_setSpace;
+	}, true, [], true] call CBA_fnc_addClassEventHandler;
+}forEach ["USAF_C130J","USAF_C130J_Cargo"];
+
 //Ammo Truck
 
 SOF_Magazines = []; 

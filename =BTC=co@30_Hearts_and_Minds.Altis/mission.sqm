@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3563;
+		nextID=3606;
 	};
 	class Camera
 	{
-		pos[]={8526.7959,142.048,7129.2451};
-		dir[]={-0.93667108,-0.26447037,-0.22969419};
-		up[]={-0.25687215,0.96438986,-0.062991373};
-		aside[]={-0.23817396,-3.335299e-007,0.97124708};
+		pos[]={8603.8506,138.22394,6854.4443};
+		dir[]={-0.83065069,-0.30154309,-0.46814105};
+		up[]={-0.26270539,0.95344627,-0.14805654};
+		aside[]={-0.49099159,-3.1397212e-007,0.87119442};
 	};
 };
 binarizationWanted=0;
-sourceName="ProjetOtan14_6";
+sourceName="ProjetOtan14_6-1b";
 addons[]=
 {
 	"A3_Ui_F",
@@ -47801,6 +47801,18 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -47809,18 +47821,6 @@ class CustomAttributes
 				{
 					singleType="SCALAR";
 					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					singleType="ARRAY";
 				};
 			};
 		};
@@ -61940,8 +61940,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8552.2197,111.55452,6846.5063};
-								angles[]={0,3.1498961,0};
+								position[]={8552.2197,111.55452,6846.5068};
+								angles[]={0,3.1499004,0};
 							};
 							side="Empty";
 							flags=4;
@@ -66784,7 +66784,6 @@ class Mission
 					{
 					};
 					id=11066;
-					atlOffset=-182.61;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -66937,7 +66936,7 @@ class Mission
 				};
 			};
 			id=4312;
-			atlOffset=8.2235718;
+			atlOffset=0.38021088;
 		};
 		class Item8
 		{
@@ -82104,7 +82103,7 @@ class Mission
 												class data
 												{
 													singleType="STRING";
-													value="Core\img\sofcadre.jpg";
+													value="Core\img\sofcadre.paa";
 												};
 											};
 										};
