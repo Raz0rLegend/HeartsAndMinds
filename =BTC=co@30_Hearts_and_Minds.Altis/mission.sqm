@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3606;
+		nextID=3778;
 	};
 	class Camera
 	{
-		pos[]={8603.8506,138.22394,6854.4443};
-		dir[]={-0.83065069,-0.30154309,-0.46814105};
-		up[]={-0.26270539,0.95344627,-0.14805654};
-		aside[]={-0.49099159,-3.1397212e-007,0.87119442};
+		pos[]={8492.8184,132.50951,7068.8086};
+		dir[]={-0.8217904,-0.30865136,0.47907174};
+		up[]={-0.26667029,0.95115918,0.15545811};
+		aside[]={0.50365365,-4.3323962e-007,0.86395895};
 	};
 };
 binarizationWanted=0;
-sourceName="ProjetOtan14_6-1b";
+sourceName="ProjetOtan14_6-2";
 addons[]=
 {
 	"A3_Ui_F",
@@ -48662,8 +48662,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8435.5039,115.59028,6803.0996};
-						angles[]={0,2.2545288,0};
+						position[]={8435.5039,115.59028,6803.1001};
+						angles[]={0,2.254529,0};
 					};
 					side="Empty";
 					flags=5;
@@ -48673,6 +48673,23 @@ class Mission
 					};
 					id=2447;
 					type="Land_BarGate_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item16
 				{
@@ -49578,7 +49595,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Mech H&M";
-			state=1;
 			class Entities
 			{
 				items=32;
@@ -50489,8 +50505,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8443.2637,111.54,7105.2539};
-						angles[]={0,1.5917547,0};
+						position[]={8433.0918,111.54,7105.1763};
+						angles[]={0,1.5720245,0};
 					};
 					side="Empty";
 					flags=4;
@@ -50981,7 +50997,7 @@ class Mission
 				};
 			};
 			id=329;
-			atlOffset=-1.0176468;
+			atlOffset=-1.0155945;
 		};
 		class Item4
 		{
@@ -63381,8 +63397,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8310.2275,112.07827,7001.0151};
-								angles[]={0,1.5021241,0};
+								position[]={8310.2275,112.07845,7001.0146};
+								angles[]={0,1.5021176,0};
 							};
 							side="West";
 							flags=5;
@@ -63446,9 +63462,23 @@ class Mission
 							};
 							id=11080;
 							type="rhsusf_army_ocp_ah64_pilot";
+							atlOffset=0.00017547607;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -63461,7 +63491,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -63474,7 +63504,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item14
@@ -63551,6 +63581,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -63562,7 +63605,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -63575,7 +63618,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item15
@@ -63652,6 +63695,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -63663,7 +63719,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -63676,7 +63732,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item16
@@ -63753,6 +63809,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -63764,7 +63833,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -63777,7 +63846,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item17
@@ -63854,6 +63923,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -63865,7 +63947,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -63878,7 +63960,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item18
@@ -63955,6 +64037,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -63966,7 +64061,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -63979,7 +64074,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item19
@@ -64056,6 +64151,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -64067,7 +64175,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -64080,7 +64188,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item20
@@ -64157,6 +64265,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -64168,7 +64289,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -64181,7 +64302,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item21
@@ -64258,6 +64379,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -64269,7 +64403,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -64282,7 +64416,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item22
@@ -64360,6 +64494,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -64371,7 +64518,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -64384,7 +64531,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item23
@@ -64462,6 +64609,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -64473,7 +64633,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -64486,7 +64646,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item24
@@ -64564,6 +64724,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -64575,7 +64748,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -64588,7 +64761,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item25
@@ -66784,6 +66957,7 @@ class Mission
 					{
 					};
 					id=11066;
+					atlOffset=-182.61;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -66936,7 +67110,7 @@ class Mission
 				};
 			};
 			id=4312;
-			atlOffset=0.38021088;
+			atlOffset=8.2235718;
 		};
 		class Item8
 		{
@@ -78219,7 +78393,7 @@ class Mission
 					{
 					};
 					id=11006;
-					atlOffset=-182.61;
+					atlOffset=0.033782959;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -78256,7 +78430,7 @@ class Mission
 				};
 			};
 			id=4599;
-			atlOffset=-38.093132;
+			atlOffset=0.19625092;
 		};
 		class Item9
 		{
@@ -90322,6 +90496,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="Opti Carte";
+			state=1;
 			class Entities
 			{
 				items=126;
@@ -105358,14 +105533,31 @@ class Mission
 					};
 					id=4205;
 					type="Land_BarGate_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item34
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8424.0566,115.59028,6721.7104};
-						angles[]={0,0.58983189,0};
+						position[]={8424.0566,115.59028,6721.71};
+						angles[]={0,0.58983397,0};
 					};
 					side="Empty";
 					flags=5;
@@ -105375,6 +105567,23 @@ class Mission
 					};
 					id=4206;
 					type="Land_BarGate_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item35
 				{
@@ -116859,11 +117068,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=75;
+			nextID=76;
 		};
 		class Links
 		{
-			items=75;
+			items=76;
 			class Item0
 			{
 				linkID=0;
@@ -117609,6 +117818,16 @@ class Mission
 				linkID=74;
 				item0=11267;
 				item1=7635;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item75
+			{
+				linkID=75;
+				item0=4256;
+				item1=232;
 				class CustomData
 				{
 					type="Sync";
