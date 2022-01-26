@@ -525,7 +525,7 @@ btc_construction_array =
             "ACE_Track",
             "B_Slingload_01_Ammo_F",
             "B_Slingload_01_Fuel_F",
-			"Fuel_can"
+            "Fuel_can"
         ] + (_allClassSorted select {_x isKindOf "FlexibleTank_base_F"})
     ]
 ];
