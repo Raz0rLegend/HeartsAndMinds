@@ -120,9 +120,125 @@ if (btc_p_respawn_ticketsAtStart >= 0) then {
     params ["_obj"];
     [_obj, -1] call ace_cargo_fnc_setSpace;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
+
+["Land_Cargo20_IDAP_F","InitPost",{
+	params ["_obj"];
+	[_obj,20] call ace_cargo_fnc_setSize;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+["Land_Cargo20_military_green_F","InitPost",{
+	params ["_obj"];
+	[_obj,40] call ace_cargo_fnc_setSpace;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+["Land_Cargo20_military_green_F","InitPost",{
+	params ["_obj"];
+	[_obj,10] call ace_cargo_fnc_setSize;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+["Land_Cargo40_military_green_F","InitPost",{
+	params ["_obj"];
+	[_obj,80] call ace_cargo_fnc_setSpace;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+["Land_Cargo40_military_green_F","InitPost",{
+	params ["_obj"];
+	[_obj,25] call ace_cargo_fnc_setSize;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+["Fuel_can", "InitPost", {
+    params ["_obj"];
+    [_obj, 50] call ace_refuel_fnc_makeJerryCan;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+//BW
 {
     [_x, "InitPost", {
         params ["_obj"];
-        [_obj, 50] call ace_cargo_fnc_setSpace;
+        [_obj, 6] call ace_cargo_fnc_setSpace;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
-} forEach ["CUP_MTVR_Base", "Truck_01_base_F"];
+} forEach [  
+			"BWA3_Eagle_FLW100_Tropen",
+			"BWA3_Dingo2_FLW100_MG3_CG13_Tropen",
+			"BWA3_Dingo2_FLW200_M2_CG13_Tropen",
+			"BWA3_Dingo2_FLW200_GMW_CG13_Tropen",
+			"Redd_Tank_Gepard_1A2_Tropentarn",
+			"KGB_B_MRAP_03_hmg_F_DES",
+			"Redd_Tank_Wiesel_1A2_TOW_Tropentarn",
+			"Redd_Tank_Wiesel_1A4_MK20_Tropentarn",
+			"rnt_sppz_2a2_luchs_tropentarn",
+			"Redd_Tank_Fuchs_1A4_Pi_Tropentarn",
+			"BWA3_Puma_Tropen",
+			"BWA3_Leopard2_Tropen"];
+			
+["Redd_Tank_Fuchs_1A4_San_Tropentarn","InitPost",{
+	params ["_obj"];
+	[_obj,12] call ace_cargo_fnc_setSpace;
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+//US
+{
+	[_x, "InitPost", {
+        params ["_obj"];
+        [_obj, 5] call ace_cargo_fnc_setSpace;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach [  
+			"rhsusf_mrzr4_d",
+			"rhsusf_m966_d",
+			"rhsusf_m1151_mk19_v2_usarmy_d",
+			"rhsusf_m1151_m2_v2_usarmy_d",
+			"rhsusf_m1151_m240_v2_usarmy_d",
+			"rhsusf_m1165a1_gmv_m2_m240_socom_d",
+			"RHS_M2A3_BUSKI",
+			"rhsusf_stryker_m1132_m2_d"];
+{
+    [_x, "InitPost", {
+        params ["_obj"];
+        [_obj, 30] call ace_cargo_fnc_setSpace;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach [
+			"Truck_01_base_F",
+			"rhsusf_M977A4_BKIT_usarmy_d",
+			"rhsusf_M977A4_usarmy_d",
+			"rnt_lkw_7t_mil_gl_kat_i_transport_trope",
+			"rhsusf_M1084A1P2_B_D_fmtv_usarmy"];
+
+{
+    [_x, "InitPost", {
+        params ["_obj"];
+        [_obj, 20] call ace_cargo_fnc_setSpace;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach ["rnt_lkw_5t_mil_gl_kat_i_transport_trope"];
+
+{
+	[_x,"InitPost", {
+		params ["_obj"];
+		[_obj,20] call ace_cargo_fnc_setSpace;
+	}, true, [], true] call CBA_fnc_addClassEventHandler;
+}forEach ["USAF_C130J","USAF_C130J_Cargo"];
+
+//Ammo Truck
+
+SOF_Magazines = []; 
+private _CfgMagazines = configFile >> "CfgMagazines"; 
+{
+    private _magsFilter = format ["(configName _x find '%1' == 0) && (getNumber (_x >> 'scope') == 2)", _x];
+    private _magsList = _magsFilter configClasses _CfgMagazines apply { configName _x };
+    SOF_Magazines append _magsList;
+} forEach [ 
+    "BWA3_" ,
+	"rhsusf" ,
+	"ACE",
+	"rhs_mag_"
+];
+
+{ 
+    [_x, "InitPost", { 
+		params ["_obj"];
+        [_obj, SOF_Magazines, true, true] call ace_arsenal_fnc_initbox; 
+    }, true, [], true] call CBA_fnc_addClassEventHandler; 
+} forEach [
+            "rhsusf_M977A4_AMMO_BKIT_usarmy_d",
+            "rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d",
+            "rhsusf_M977A4_AMMO_usarmy_d",
+            "rnt_lkw_7t_mil_gl_kat_i_mun_trope"];
