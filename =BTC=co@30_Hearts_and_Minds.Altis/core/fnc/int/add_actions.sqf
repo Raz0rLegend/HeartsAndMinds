@@ -255,3 +255,10 @@ _action = ["Temps", "Mettre la nuit", "\A3\ui_f\data\igui\cfg\simpleTasks\types\
 ["Land_Laptop_03_sand_F", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 _action = ["Temps", "Changer la météo", "\A3\ui_f\data\igui\cfg\simpleTasks\types\default_ca.paa", { 5 setrain 0; 5 setfog 0; 5 setOvercast 0; 10 setRainbow 1; forceWeatherChange;},{true}] call ace_interact_menu_fnc_createAction;
 ["Land_Laptop_03_sand_F", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+// Attached to "intel" object
+_action = ["Temps", "Mettre le jour", "\A3\ui_f\data\igui\cfg\simpleTasks\types\default_ca.paa", {((6 - daytime + 24) % 24) remoteExec ["skipTime",0]},{true}] call ace_interact_menu_fnc_createAction;
+[intel, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToObject;
+_action = ["Temps", "Mettre la nuit", "\A3\ui_f\data\igui\cfg\simpleTasks\types\default_ca.paa", {((22 - daytime + 24) % 24) remoteExec ["skipTime"],0},{true}] call ace_interact_menu_fnc_createAction;
+[intel, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToObject;
+_action = ["Temps", "Changer la météo", "\A3\ui_f\data\igui\cfg\simpleTasks\types\default_ca.paa", { 5 setrain 0; 5 setfog 0; 5 setOvercast 0; 10 setRainbow 1; forceWeatherChange;},{true}] call ace_interact_menu_fnc_createAction;
+[intel, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToObject;

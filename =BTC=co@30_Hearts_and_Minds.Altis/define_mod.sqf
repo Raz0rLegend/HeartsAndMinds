@@ -55,7 +55,8 @@ btc_custom_loc = [
 //FOB
 [[4758,1820,0],"NameCityCapital","FOB Kharym",700,true],
 [[3570,2021,0],"NameCityCapital","Checkpoint Bardha",700,true],
-[[8279,8816,0],"NameCityCapital","FOB Muhzet",700,true]													   
+[[8279,8816,0],"NameCityCapital","FOB Muhzet",700,true]										   
+];
 ];
 
 /*

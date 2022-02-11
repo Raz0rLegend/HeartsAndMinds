@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3914;
+		nextID=4004;
 	};
 	class Camera
 	{
-		pos[]={8415.5029,136.13046,7016.2588};
-		dir[]={-0.92794073,-0.34414452,-0.14320667};
-		up[]={-0.34012258,0.93891585,-0.052490067};
-		aside[]={-0.15252167,-2.013694e-007,0.9883092};
+		pos[]={8352.3203,113.645,6992.8965};
+		dir[]={-0.46153051,-0.10269483,-0.881181};
+		up[]={-0.047653556,0.99471235,-0.090982407};
+		aside[]={-0.88586509,-4.7101639e-007,0.46398589};
 	};
 };
 binarizationWanted=0;
-sourceName="ProjetOtan14_6-3b";
+sourceName="ProjetOtan14_6-3";
 addons[]=
 {
 	"A3_Ui_F",
@@ -48089,7 +48089,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Decont";
-			state=1;
 			class Entities
 			{
 				items=38;
@@ -50880,7 +50879,7 @@ class Mission
 				};
 			};
 			id=329;
-			atlOffset=-0.75362396;
+			atlOffset=-0.73817444;
 		};
 		class Item4
 		{
@@ -50897,7 +50896,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Hopital de campagne";
-			state=1;
 			class Entities
 			{
 				items=36;
@@ -52345,7 +52343,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Éclairage";
-			state=1;
 			class Entities
 			{
 				items=57;
@@ -54187,7 +54184,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Base US";
-			state=1;
 			class Entities
 			{
 				items=62;
@@ -61791,7 +61787,7 @@ class Mission
 					{
 					};
 					id=11066;
-					atlOffset=-182.61;
+					atlOffset=0.00026702881;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -61944,13 +61940,12 @@ class Mission
 				};
 			};
 			id=4312;
-			atlOffset=8.3147964;
+			atlOffset=0.39144135;
 		};
 		class Item8
 		{
 			dataType="Layer";
 			name="Base BW";
-			state=1;
 			class Entities
 			{
 				items=28;
@@ -69831,7 +69826,7 @@ class Mission
 					{
 					};
 					id=11006;
-					atlOffset=-182.61;
+					atlOffset=0.034049988;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -69868,13 +69863,12 @@ class Mission
 				};
 			};
 			id=4599;
-			atlOffset=-38.093132;
+			atlOffset=0.19625092;
 		};
 		class Item9
 		{
 			dataType="Layer";
 			name="Batiment Commandement";
-			state=1;
 			class Entities
 			{
 				items=5;
@@ -72107,7 +72101,6 @@ class Mission
 						{
 							dataType="Layer";
 							name="Fourniture";
-							state=1;
 							class Entities
 							{
 								items=34;
@@ -73719,7 +73712,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										disableSimulation=1;
+										name="intel";
 									};
 									id=3419;
 									type="Land_MapBoard_01_Wall_F";
@@ -75075,7 +75068,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Pod Logs";
-			state=1;
 			class Entities
 			{
 				items=28;
@@ -76055,7 +76047,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="LAT + TP+TE";
-			state=1;
 			class Entities
 			{
 				items=14;
@@ -77025,7 +77016,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Objets Presse";
-			state=1;
 			class Entities
 			{
 				items=5;
@@ -77121,7 +77111,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Maison de Tir ZUB";
-			state=1;
 			class Entities
 			{
 				items=4;
@@ -81954,7 +81943,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Opti Carte";
-			state=1;
 			class Entities
 			{
 				items=126;
@@ -104635,14 +104623,14 @@ class Mission
 				class Item77
 				{
 					dataType="Trigger";
-					position[]={8405.5195,99.601639,7393.1831};
+					position[]={8750.2646,107.92187,7602.3506};
 					class Attributes
 					{
 						condition="{_x iskindof ""air""} count thislist == 1";
 						onActivation="[oui1, true] remoteExec [""enableSimulationGlobal"", 2];[oui2, true] remoteExec [""enableSimulationGlobal"", 2];";
 						onDeactivation="[oui1, false] remoteExec [""enableSimulationGlobal"", 2];[oui2, false] remoteExec [""enableSimulationGlobal"", 2];";
-						sizeA=700;
-						sizeB=547.45599;
+						sizeA=1044.9126;
+						sizeB=829.50836;
 						sizeC=0;
 						repeatable=1;
 						activationBy="EAST";
@@ -106885,14 +106873,14 @@ class Mission
 				class Item125
 				{
 					dataType="Trigger";
-					position[]={8407.4688,81.930672,6294.6958};
+					position[]={8741.7832,80.468803,6132.2861};
 					class Attributes
 					{
 						condition="{_x iskindof ""air""} count thislist == 1";
 						onActivation="[oui3, true] remoteExec [""enableSimulationGlobal"", 2];[oui4, true] remoteExec [""enableSimulationGlobal"", 2];";
 						onDeactivation="[oui3, false] remoteExec [""enableSimulationGlobal"", 2];[oui4, false] remoteExec [""enableSimulationGlobal"", 2];";
-						sizeA=700;
-						sizeB=547.45599;
+						sizeA=1050.6157;
+						sizeB=674.14301;
 						sizeC=0;
 						repeatable=1;
 						activationBy="EAST";
@@ -106903,7 +106891,7 @@ class Mission
 				};
 			};
 			id=393;
-			atlOffset=-15.978615;
+			atlOffset=-15.546593;
 		};
 		class Item19
 		{
@@ -108528,7 +108516,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="btc_veh_respawnable";
-			state=1;
 			class Entities
 			{
 				items=2;
@@ -108607,7 +108594,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="btc_vehicles";
-			state=1;
 			class Entities
 			{
 				items=62;

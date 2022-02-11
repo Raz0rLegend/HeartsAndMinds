@@ -55,7 +55,7 @@ private _has_en = _city getVariable ["occupied", false];
 private _has_ho = _city getVariable ["has_ho", false];
 private _ieds = _city getVariable ["ieds", []];
 private _spawningRadius = _cachingRadius/2;
-private _buildings = nearestObjects [_city, ["Building"], _cachingRadius]; 																		   
+private _buildings = nearestObjects [_city, ["Building"], _cachingRadius];
 
 if (!(_city getVariable ["initialized", false])) then {
     private _numberOfIED = (switch _type do {
@@ -118,7 +118,7 @@ if (_data_units isNotEqualTo []) then {
     if (_has_en) then {
         private _finalNumberOfGroup = _p_mil_group_ratio * _numberOfGroup;
         private _numberOfHouseGroup = _finalNumberOfGroup * btc_p_mil_wp_houseDensity;
-		private _closest = [_city, btc_city_all select {!(_x getVariable ["active", false])}, false] call btc_fnc_find_closecity;  
+        private _closest = [_city, btc_city_all select {!(_x getVariable ["active", false])}, false] call btc_fnc_find_closecity;  
         for "_i" from 1 to round _finalNumberOfGroup do {
             [
                 _city,
@@ -126,9 +126,6 @@ if (_data_units isNotEqualTo []) then {
                 2 + round random 2,
                 [["PATROL", "SENTRY"] selectRandomWeighted [0.7, 0.3], "HOUSE"] select (_i <= _numberOfHouseGroup)
             ] call btc_mil_fnc_create_group;
-        };
-		for "_i" from 1 to (1 + round random 2) do {
-            [[_closest, [_city, _spawningRadius/3] call CBA_fnc_randPos, 1, selectRandom btc_type_motorized_armed], btc_fnc_mil_send] call btc_fnc_delay_exec;																																						
         };
     };
 
@@ -166,14 +163,13 @@ if (_data_units isNotEqualTo []) then {
     };
 };
 //Civilian Weapons Call
-//[getPos _city, 300] call btc_fnc_civ_get_weapons;
-//[[getPos _city, 300], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
-if (btc_global_reputation < 500) then {
-    private _rand = random 8;
+if (btc_global_reputation < 1000) then {
+    private _rand = random 7;
     if(_rand > 7) then {playSound3d [getMissionPath "core\sounds\IslamicCTP_1.ogg", _buildings select 0, false, getPosASL (_buildings select 0), 5, 1, 600];
     [_city, _spawningRadius, 1 + round random [0, 1, 2], random 1] call btc_fnc_mil_create_group;
     [[getPos _city, 400], btc_fnc_civ_get_weapons] call btc_fnc_delay_exec;
     }};
+
 if (btc_p_animals_group_ratio > 0) then {
     if (_data_animals isNotEqualTo []) then {
         {
@@ -361,6 +357,19 @@ if (_numberOfCivVeh < _p_civ_max_veh) then {
         _group setVariable ["no_cache", true];
         _group setVariable ["acex_headless_blacklist", true];
         [[_group, _city, _cachingRadius + btc_patrol_area], btc_civ_fnc_create_patrol] call btc_delay_fnc_exec;
+    };
+};
+
+// https://feedback.bistudio.com/T162941
+private _HCs = entities "HeadlessClient_F";
+if (_HCs isNotEqualTo []) then {
+    private _triggerZSize = (triggerArea (_city getVariable "trigger_player_side")) select 4;
+    if (_triggerZSize isNotEqualTo -1) then {
+        private _cityPos = getPosASL _city;
+        private _HCPos = _cityPos vectorAdd [0, 0, -(_triggerZSize + 50)];
+        {
+            _x setPosASL _HCPos;
+        } forEach _HCs;
     };
 };
 
