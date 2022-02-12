@@ -57,7 +57,6 @@ btc_custom_loc = [
 [[3570,2021,0],"NameCityCapital","Checkpoint Bardha",700,true],
 [[8279,8816,0],"NameCityCapital","FOB Muhzet",700,true]										   
 ];
-];
 
 /*
     Here you can tweak spectator view during respawn screen.

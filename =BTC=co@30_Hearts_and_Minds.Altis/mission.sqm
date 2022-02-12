@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=11296;
+		nextID=11308;
 	};
 	class MarkerIDProvider
 	{
@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4004;
+		nextID=4094;
 	};
 	class Camera
 	{
-		pos[]={8352.3203,113.645,6992.8965};
-		dir[]={-0.46153051,-0.10269483,-0.881181};
-		up[]={-0.047653556,0.99471235,-0.090982407};
-		aside[]={-0.88586509,-4.7101639e-007,0.46398589};
+		pos[]={8402.1396,137.1539,7190.5742};
+		dir[]={0.23613608,-0.29511625,-0.92587888};
+		up[]={0.072937191,0.9554528,-0.28598532};
+		aside[]={-0.969028,-2.6915222e-007,-0.24713993};
 	};
 };
 binarizationWanted=0;
-sourceName="ProjetOtan14_6-3";
+sourceName="ProjetOtan14_7-0";
 addons[]=
 {
 	"A3_Ui_F",
@@ -48068,7 +48068,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=48;
+		items=53;
 		class Item0
 		{
 			dataType="Marker";
@@ -81945,7 +81945,7 @@ class Mission
 			name="Opti Carte";
 			class Entities
 			{
-				items=126;
+				items=128;
 				class Item0
 				{
 					dataType="Logic";
@@ -104623,14 +104623,14 @@ class Mission
 				class Item77
 				{
 					dataType="Trigger";
-					position[]={8750.2646,107.92187,7602.3506};
+					position[]={8750.2646,107.922,7602.3511};
 					class Attributes
 					{
 						condition="{_x iskindof ""air""} count thislist == 1";
 						onActivation="[oui1, true] remoteExec [""enableSimulationGlobal"", 2];[oui2, true] remoteExec [""enableSimulationGlobal"", 2];";
 						onDeactivation="[oui1, false] remoteExec [""enableSimulationGlobal"", 2];[oui2, false] remoteExec [""enableSimulationGlobal"", 2];";
-						sizeA=1044.9126;
-						sizeB=829.50836;
+						sizeA=1044.913;
+						sizeB=829.508;
 						sizeC=0;
 						repeatable=1;
 						activationBy="EAST";
@@ -104638,6 +104638,7 @@ class Mission
 					};
 					id=10171;
 					type="EmptyDetectorArea10x10";
+					atlOffset=-7.6293945e-006;
 				};
 				class Item78
 				{
@@ -106889,9 +106890,39 @@ class Mission
 					id=11268;
 					type="EmptyDetectorArea10x10";
 				};
+				class Item126
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8373.1396,112.32981,7068.9644};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=11305;
+					type="Box_NATO_AmmoVeh_F";
+				};
+				class Item127
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8373.4375,112.32981,7108.5425};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=11306;
+					type="Box_NATO_AmmoVeh_F";
+				};
 			};
 			id=393;
-			atlOffset=-15.546593;
+			atlOffset=-3.8866501;
 		};
 		class Item19
 		{
@@ -116282,6 +116313,161 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8359.7285,111.54,6964.0098};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=11300;
+			type="Land_HelipadEmpty_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item49
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8359.7871,111.54,6944.1699};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=11301;
+			type="Land_HelipadEmpty_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item50
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8359.2344,111.54,6924.7788};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=11302;
+			type="Land_HelipadEmpty_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item51
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8358.6143,111.54,6904.6943};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=11303;
+			type="Land_HelipadEmpty_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item52
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8358.084,111.54,6883.5649};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=11304;
+			type="Land_HelipadEmpty_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};
