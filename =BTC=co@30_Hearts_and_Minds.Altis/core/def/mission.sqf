@@ -658,22 +658,22 @@ btc_spect_range = 1000;
 btc_spect_updateOn = -1;
 
 //Rep
-btc_rep_bonus_cache = 50;
-btc_rep_bonus_civ_hh = 3;
-btc_rep_bonus_disarm = 10;
-btc_rep_bonus_hideout = 100;
-btc_rep_bonus_mil_killed = 0.25;
+btc_rep_bonus_cache = 100;
+btc_rep_bonus_civ_hh = 1.5;
+btc_rep_bonus_disarm = 5;
+btc_rep_bonus_hideout = 150;
+btc_rep_bonus_mil_killed = 0.3;
 btc_rep_bonus_IEDCleanUp = 2;
-btc_rep_bonus_removeTag = 0.5;
-btc_rep_bonus_removeTagLetter = 0.1;
-btc_rep_bonus_foodGive = 0.5;
+btc_rep_bonus_removeTag = 0.1;
+btc_rep_bonus_removeTagLetter = 0.05;
+btc_rep_bonus_foodGive = 3;
 
 btc_rep_malus_civ_hd = - 2;
 btc_rep_malus_animal_hd = - 1;
-btc_rep_malus_civ_killed = - 25;
-btc_rep_malus_animal_killed = - 2;
-btc_rep_malus_civ_suppressed = - 4;
-btc_rep_malus_player_respawn = - 25;
+btc_rep_malus_civ_killed = - 30;
+btc_rep_malus_animal_killed = - 5;
+btc_rep_malus_civ_suppressed = - 5;
+btc_rep_malus_player_respawn = - 30;
 btc_rep_malus_veh_killed = - 40;
 btc_rep_malus_building_damaged = - 15;
 btc_rep_malus_building_destroyed = - 50;
